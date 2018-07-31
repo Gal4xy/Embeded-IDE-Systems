@@ -1,0 +1,9 @@
+bin.includes = .,\
+               build.properties,\
+               plugin.properties,\
+               plugin.xml,\
+               schema/
+jars.compile.order = .
+source.. = src/
+output.. = bin/
+custom = true

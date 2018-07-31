@@ -1,0 +1,154 @@
+package com.bjsasc.debug.core;
+
+import org.eclipse.cdt.debug.core.cdi.CDIException;
+import org.eclipse.cdt.debug.core.cdi.model.ICDIThread;
+import org.eclipse.cdt.debug.core.model.CDebugElementState;
+import org.eclipse.cdt.debug.internal.core.model.CDebugTarget;
+import org.eclipse.cdt.debug.internal.core.model.CThread;
+import org.eclipse.cdt.debug.mi.core.MIException;
+import org.eclipse.debug.core.DebugEvent;
+import org.eclipse.debug.core.DebugException;
+import org.eclipse.debug.core.DebugPlugin;
+import org.eclipse.debug.core.IDebugEventSetListener;
+import org.eclipse.debug.core.ILaunch;
+import org.eclipse.debug.core.model.IDebugTarget;
+import org.eclipse.debug.core.model.IProcess;
+import org.eclipse.debug.core.model.IThread;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.WorkbenchException;
+
+import com.bjsasc.debug.core.mi.CLIInfoThreadInfo;
+import com.bjsasc.debug.core.mi.command.CLIInfoThread;
+
+public class MtDebugEventListener implements IDebugEventSetListener
+{
+	private IDebugTarget target;
+	private ILaunch external;
+	private IDebugServer dd;
+	private int suspendi = 0;
+
+	public MtDebugEventListener(IDebugTarget target, ILaunch external, boolean terminate, IDebugServer dd)
+	{
+		this.target = target;
+		this.external = external;
+		this.dd  =dd;
+
+	}
+
+	public void closeViewById(String ID)
+	{
+		IViewPart view;
+
+			view = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+					.getActivePage().findView(ID);
+			if(view == null)
+				return;
+			PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().hideView(view);
+			}
+	public void handleDebugEvents(DebugEvent[] events)
+	{
+		for (int i=0; i < events.length; i++)
+		{
+			try {
+				switch (events[i].getKind()) {
+				case DebugEvent.TERMINATE :
+					if (target.isTerminated()) {
+						Thread.sleep(1000);
+						if (external != null)
+							external.terminate();
+						try {
+							if(dd!=null) {
+								dd.stop();
+								dd.release();
+							 }
+						}
+						catch(Exception e){
+							e.printStackTrace();
+						}
+						ILaunch[] launches = DebugPlugin.getDefault().getLaunchManager().getLaunches();
+						boolean allTerminated=true;
+						for(ILaunch launch:launches){
+							IDebugTarget[]  debugTargets= launch.getDebugTargets();
+							for(IDebugTarget debugTarget:debugTargets){
+								//所有连接里有一个没有结束
+								if(debugTarget!=null&& (!debugTarget.isTerminated())){
+									allTerminated = false;
+								}
+							}
+						}
+						if(allTerminated){
+							ReverseEnableModel.getInstance().setMultiDebug(false);
+							ReverseEnableModel.getInstance().setIsDebugMode(false);
+				        	ReverseEnableModel.getInstance().updateEnableState();
+				        	ReverseEnableModel.getInstance().setAllReverseDisable();
+							/*modified by mbl at 2012-03-08
+							 * 无法获得当前的window,只能获得第一个window，在多机调试时，需要考虑这个问题
+							 * */
+							PlatformUI.getWorkbench().getDisplay().asyncExec(new Thread() {
+								public void run() {
+									try {
+										PlatformUI.getWorkbench().showPerspective("com.bjsasc.CPerspective", PlatformUI.getWorkbench().getWorkbenchWindows()[0]);
+										//关闭inforecord视图
+										closeViewById("com.bjsasc.reverseDebug.StepGoToView");//modified by lichengfei 2012-2-28
+
+									} catch (WorkbenchException e) {
+										System.out.println("切换透视图失败，可能是因为透视图ID不存在:com.bjsasc.CPerspective");
+									}
+								}
+							});
+
+						}
+						DebugPlugin.getDefault().removeDebugEventListener(this);
+					}
+					break;
+				case DebugEvent.RESUME :
+				  //重启时将是否通过验证置为false，启动时再次验证
+					if (!events[i].isEvaluation() || !((events[i].getDetail() & DebugEvent.EVALUATION_IMPLICIT) != 0)) {
+						ReverseEnableModel.getInstance().setAllReverseDisable();
+					}
+					break;
+				case DebugEvent.SUSPEND :
+					suspendi++;
+					if(suspendi%2==0)
+						return;
+					
+					CLIInfoThread miCmdTask = new  CLIInfoThread();
+					CDIDebugModel.postCommand(miCmdTask);
+					CLIInfoThreadInfo  infoTask = null;
+					try {
+						infoTask =miCmdTask.getMIInfoThreadInfo();
+					} catch (MIException e) {
+						e.printStackTrace();
+					}
+					
+					MultiTaskInfoModel.getInstance().updateEnableState(infoTask.getTasksInfo());
+					
+					IThread[] threads = target.getThreads();
+					int ii = 0;
+					for(IThread t:threads){
+						if(t instanceof CThread){
+							CThread ct = (CThread) t;
+							CDebugTarget cd = (CDebugTarget) target;
+							ICDIThread currentThread = cd.getCDITarget().getCurrentThread();
+							if(ct.getCDIThread().equals(currentThread))
+								ct.setState(CDebugElementState.SUSPENDED);
+							else
+								ct.setState(CDebugElementState.RESUMED);
+						}
+						ii++;
+					}
+					break;
+				default:
+
+				}
+			} catch (DebugException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (CDIException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

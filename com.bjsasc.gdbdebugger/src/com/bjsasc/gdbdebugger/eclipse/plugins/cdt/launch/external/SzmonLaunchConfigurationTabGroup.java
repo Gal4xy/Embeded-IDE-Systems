@@ -1,0 +1,25 @@
+package com.bjsasc.gdbdebugger.eclipse.plugins.cdt.launch.external;
+
+import org.eclipse.debug.ui.AbstractLaunchConfigurationTabGroup;
+import org.eclipse.debug.ui.CommonTab;
+import org.eclipse.debug.ui.EnvironmentTab;
+import org.eclipse.debug.ui.ILaunchConfigurationDialog;
+import org.eclipse.debug.ui.ILaunchConfigurationTab;
+import org.eclipse.debug.ui.RefreshTab;
+import com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcCDebuggerTab;;
+
+
+public class SzmonLaunchConfigurationTabGroup extends AbstractLaunchConfigurationTabGroup
+{
+  public void createTabs(ILaunchConfigurationDialog dialog, String mode)
+  {
+    ILaunchConfigurationTab[] tabs = { 
+      new SzmonLaunchProgramTab(), 
+      new SparcCDebuggerTab(false),
+      new RefreshTab(), 
+      new EnvironmentTab(), 
+      new CommonTab() };
+
+    setTabs(tabs);
+  }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   
+   <extension
+         point="org.eclipse.debug.core.sourcePathComputers">
+      <sourcePathComputer
+            class="com.bjsasc.debug.core.sourcelookup.CygWinSourcePathComputerDelegate"
+            id="com.bjsasc.debug.core.sourcelookup.sourcePathComputer"/>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.sourceLocators">
+      <sourceLocator
+            class="com.bjsasc.debug.core.sourcelookup.CygWinSourceLookupDirector"
+            id="com.bjsasc.debug.core.sourcelookup.sourceLocator"
+            name="debuggerLocators">
+      </sourceLocator>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.sourceContainerTypes">
+      <sourceContainerType
+            class="com.bjsasc.debug.core.sourcelookup.CygWinSourceContainerType"
+            description="sourceContainerType"
+            id="com.bjsasc.debug.core.sourcelookup.sourceContainerType"
+            name="name">
+      </sourceContainerType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.sourceContainerPresentations">
+      <sourceContainerPresentation
+            browserClass="com.bjsasc.debug.core.sourcelookup.CygWinSourceContainerBrowser"
+            containerTypeID="com.bjsasc.debug.core.sourcelookup.sourceContainerType"
+            icon="icon/dsu_debugger.png"
+            id="com.bjsasc.debug.core.sourcelookup.sourceContainerPresentation">
+      </sourceContainerPresentation>
+   </extension>
+   </plugin>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: com.bjsasc.serial.core
+Bundle-Version: 1.0.0
+Bundle-Activator: com.bjsasc.serial.core.Activator
+Bundle-Vendor: BJSASC
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.bjsasc.serial.core,
+ com.sun.comm,
+ javax.comm

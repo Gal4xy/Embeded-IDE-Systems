@@ -1,0 +1,24 @@
+[2018-03-20 14:25:04] Executing startup tasks
+[2018-03-20 14:25:06] Java(TM) SE Runtime Environment 9.0.1+11
+[2018-03-20 14:25:06] Product self.product.version
+[2018-03-20 14:25:06] Workspace C:\Users\Galaxy\Desktop\workspace\runtime-New_configuration
+[2018-03-20 14:25:06] Bundle org.eclipse.oomph.setup 1.8.0.v20170408-0745, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2018-03-20 14:25:06] Bundle org.eclipse.oomph.setup.core 1.8.0.v20170531-0903, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2018-03-20 14:25:06] Bundle org.eclipse.oomph.setup.p2 1.8.0.v20170318-0419, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2018-03-20 14:25:06] Performing Preference /instance/org.eclipse.debug.core/org.eclipse.debug.core.PREF_DELETE_CONFIGS_ON_PROJECT_DELETE = false
+[2018-03-20 14:25:06] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_FILTER_LAUNCH_TYPES = true
+[2018-03-20 14:25:06] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_FILTER_TYPE_LIST = NpLaunchConfigurationType,
+[2018-03-20 14:25:06] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_FILTER_WORKING_SETS = true
+[2018-03-20 14:25:06] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.switch_perspective_on_suspend = never
+[2018-03-20 14:25:06] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.switch_to_perspective = never
+[2018-03-20 14:25:06] 
+[2018-03-20 14:31:19] Executing startup tasks
+[2018-03-20 14:31:19] Java(TM) SE Runtime Environment 9.0.1+11
+[2018-03-20 14:31:19] Product self.product.version
+[2018-03-20 14:31:19] Workspace C:\Users\Galaxy\Desktop\workspace\runtime-New_configuration
+[2018-03-20 14:31:19] Bundle org.eclipse.oomph.setup 1.8.0.v20170408-0745, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2018-03-20 14:31:19] Bundle org.eclipse.oomph.setup.core 1.8.0.v20170531-0903, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2018-03-20 14:31:19] Bundle org.eclipse.oomph.setup.p2 1.8.0.v20170318-0419, build=3059, branch=2161405b80cf99ed791602ba56cdf44084f5ca43
+[2018-03-20 14:31:19] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_FILTER_LAUNCH_TYPES = true
+[2018-03-20 14:31:19] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_FILTER_WORKING_SETS = true
+[2018-03-20 14:31:19] 

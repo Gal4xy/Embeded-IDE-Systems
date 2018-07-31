@@ -1,0 +1,13 @@
+
+SZMONLaunchTab.0=\u542f\u52a8\u914d\u7f6e
+SZMONLaunchTab.IPArgumentmissing=host/port missing
+SZMONLaunchTab.Argumentmissing=-sim, -dsu or -grlib switch missing
+SZMONLaunchTab.Typeselect=select eather local or remote szmon session
+SZMONLaunchTab.Combo.startinternal=Start SZMON inside eclipse
+SZMONLaunchTab.Combo.startlocally=Start TSIM2/SZMON inside eclipse
+SZMONLaunchTab.Combo.startremote=\u8fde\u63a5\u5230\u5916\u90e8\u7684\u0053\u0070\u0061\u0072\u0063\u677f\u5361\u542f\u52a8\u8c03\u8bd5\u76d1\u63a7\u5668
+SZMONLaunchTab.Combo.label=\u542f\u52a8\u6a21\u5f0f
+SZMONLaunchTab.Typemissing=eather local or remote szmon session has to be selected
+
+SZMONLaunchTab.Prog0=tsim-leon3
+SZMONLaunchTab.Prog1=szmon

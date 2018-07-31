@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component name="org.eclipse.debug.ui_3.12.50.v20170920-1329" version="1.2">
+    <plugin id="org.eclipse.debug.ui_3.12.50.v20170920-1329"/>
+    <package name="org.eclipse.debug.ui" visibility="1">
+        <type name="CommonTab" restrictions="2"/>
+        <type name="DebugUITools" restrictions="6"/>
+        <type name="EnvironmentTab" restrictions="2"/>
+        <type name="IDebugUIConstants" restrictions="3"/>
+        <type name="ILaunchConfigurationDialog" restrictions="3"/>
+        <type name="ILaunchGroup" restrictions="3"/>
+        <type name="InspectPopupDialog" restrictions="2"/>
+        <type name="RefreshTab" restrictions="2"/>
+        <type name="StringVariableSelectionDialog" restrictions="2"/>
+    </package>
+    <package name="org.eclipse.debug.ui.actions" visibility="1">
+        <type name="AddMemoryRenderingActionDelegate" restrictions="6"/>
+        <type name="BreakpointTypesContribution" restrictions="2"/>
+        <type name="ExportBreakpointsOperation" restrictions="2"/>
+        <type name="IToggleBreakpointsTargetManager" restrictions="1"/>
+        <type name="ImportBreakpointsOperation" restrictions="2"/>
+        <type name="LaunchAction" restrictions="2"/>
+        <type name="LaunchAsAction" restrictions="2"/>
+        <type name="OpenLaunchDialogAction" restrictions="2"/>
+        <type name="RulerBreakpointTypesActionDelegate" restrictions="2"/>
+        <type name="RulerEnableDisableBreakpointActionDelegate" restrictions="6"/>
+        <type name="RulerRunToLineActionDelegate" restrictions="6"/>
+        <type name="RulerToggleBreakpointActionDelegate" restrictions="6"/>
+        <type name="RunToLineAction" restrictions="2"/>
+        <type name="RunToLineActionDelegate" restrictions="6"/>
+        <type name="RunToLineHandler" restrictions="2"/>
+        <type name="ToggleBreakpointAction" restrictions="2"/>
+        <type name="ToggleMethodBreakpointActionDelegate" restrictions="6"/>
+        <type name="ToggleWatchpointActionDelegate" restrictions="6"/>
+    </package>
+    <package name="org.eclipse.debug.ui.console" visibility="1">
+        <type name="FileLink" restrictions="2"/>
+        <type name="IConsole" restrictions="3"/>
+    </package>
+    <package name="org.eclipse.debug.ui.contexts" visibility="1">
+        <type name="DebugContextEvent" restrictions="2"/>
+        <type name="IDebugContextManager" restrictions="3"/>
+        <type name="IDebugContextService" restrictions="3"/>
+        <type name="ISuspendTriggerListener" restrictions="3"/>
+    </package>
+    <package name="org.eclipse.debug.ui.memory" visibility="1">
+        <type name="IMemoryRenderingManager" restrictions="3"/>
+    </package>
+    <package name="org.eclipse.debug.ui.sourcelookup" visibility="1">
+        <type name="ISourceLookupResult" restrictions="3"/>
+        <type name="SourceLookupDialog" restrictions="2"/>
+        <type name="SourceLookupTab" restrictions="2"/>
+        <type name="WorkingSetSourceContainer" restrictions="2"/>
+    </package>
+</component>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config date="1532938970315" transient="false" version="3.0">
+<site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
+<feature id="org.eclipse.ecf.filetransfer.httpclient4.feature" url="features/org.eclipse.ecf.filetransfer.httpclient4.feature_3.13.8.v20170715-2257/" version="3.13.8.v20170715-2257">
+</feature>
+<feature id="org.eclipse.help" plugin-identifier="org.eclipse.help.base" url="features/org.eclipse.help_2.2.101.v20171009-0410/" version="2.2.101.v20171009-0410">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_cs" url="features/org.eclipse.babel.nls_eclipse_cs_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ko" url="features/org.eclipse.babel.nls_tools.cdt_ko_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.core.feature" plugin-identifier="org.eclipse.wb.core" url="features/org.eclipse.wb.core.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.mylyn.bugzilla_feature" plugin-identifier="org.eclipse.mylyn.tasks.core" url="features/org.eclipse.mylyn.bugzilla_feature_3.23.1.v20170623-0008/" version="3.23.1.v20170623-0008">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_tl" url="features/org.eclipse.babel.nls_eclipse_tl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.gnu.build" url="features/org.eclipse.cdt.gnu.build_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_th" url="features/org.eclipse.babel.nls_eclipse_th_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ku" url="features/org.eclipse.babel.nls_tools.cdt_ku_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cvs.source" url="features/org.eclipse.cvs.source_1.4.401.v20171009-0410/" version="1.4.401.v20171009-0410">
+</feature>
+<feature id="org.eclipse.egit" url="features/org.eclipse.egit_4.8.0.201706111038-r/" version="4.8.0.201706111038-r">
+</feature>
+<feature id="org.eclipse.mylyn_feature" plugin-identifier="org.eclipse.mylyn.tasks.core" url="features/org.eclipse.mylyn_feature_3.23.1.v20170623-0008/" version="3.23.1.v20170623-0008">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_da" url="features/org.eclipse.babel.nls_eclipse_da_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_tr" url="features/org.eclipse.babel.nls_eclipse_tr_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wst.common_core.feature" url="features/org.eclipse.wst.common_core.feature_3.9.1.v201707201954/" version="3.9.1.v201707201954">
+</feature>
+<feature id="org.eclipse.ecf.core.ssl.feature" url="features/org.eclipse.ecf.core.ssl.feature_1.1.0.v20170110-1317/" version="1.1.0.v20170110-1317">
+</feature>
+<feature id="org.eclipse.cdt.platform" url="features/org.eclipse.cdt.platform_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.mylyn.commons.identity" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.identity_1.15.0.v20170411-1844/" version="1.15.0.v20170411-1844">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_en_CA" url="features/org.eclipse.babel.nls_tools.cdt_en_CA_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_de" url="features/org.eclipse.babel.nls_eclipse_de_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.oomph.p2" url="features/org.eclipse.oomph.p2_1.8.0.v20170410-0909/" version="1.8.0.v20170410-0909">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_lt" url="features/org.eclipse.babel.nls_tools.cdt_lt_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_uk" url="features/org.eclipse.babel.nls_eclipse_uk_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.commons.notifications" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.notifications_1.15.0.v20170411-1844/" version="1.15.0.v20170411-1844">
+</feature>
+<feature id="org.eclipse.recommenders.rcp.feature" plugin-identifier="org.eclipse.recommenders.rcp" url="features/org.eclipse.recommenders.rcp.feature_2.4.10.v20170911-1410/" version="2.4.10.v20170911-1410">
+</feature>
+<feature id="org.eclipse.ecf.filetransfer.feature" url="features/org.eclipse.ecf.filetransfer.feature_3.13.8.v20170715-2257/" version="3.13.8.v20170715-2257">
+</feature>
+<feature id="org.eclipse.babel.nls_technology.packaging.mpc_zh" url="features/org.eclipse.babel.nls_technology.packaging.mpc_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_mn" url="features/org.eclipse.babel.nls_tools.cdt_mn_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_el" url="features/org.eclipse.babel.nls_eclipse_el_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.source" url="features/org.eclipse.cdt.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_es" url="features/org.eclipse.babel.nls_eclipse_es_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_et" url="features/org.eclipse.babel.nls_eclipse_et_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_eu" url="features/org.eclipse.babel.nls_eclipse_eu_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_mylyn_zh" url="features/org.eclipse.babel.nls_mylyn_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_iw" url="features/org.eclipse.babel.nls_tools.cdt_iw_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_zh" url="features/org.eclipse.babel.nls_tools.cdt_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_vi" url="features/org.eclipse.babel.nls_eclipse_vi_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_it" url="features/org.eclipse.babel.nls_tools.cdt_it_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ja" url="features/org.eclipse.babel.nls_tools.cdt_ja_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_fa" url="features/org.eclipse.babel.nls_eclipse_fa_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.core.xml.feature" plugin-identifier="org.eclipse.wb.core.xml" url="features/org.eclipse.wb.core.xml.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.pde.source" url="features/org.eclipse.pde.source_3.13.1.v20171009-0537/" version="3.13.1.v20171009-0537">
+</feature>
+<feature id="org.eclipse.wb.swt.feature" plugin-identifier="org.eclipse.wb.swt" url="features/org.eclipse.wb.swt.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_fi" url="features/org.eclipse.babel.nls_eclipse_fi_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.emf.ecore" url="features/org.eclipse.emf.ecore_2.13.0.v20170609-0707/" version="2.13.0.v20170609-0707">
+</feature>
+<feature id="org.eclipse.equinox.p2.user.ui" url="features/org.eclipse.equinox.p2.user.ui_2.3.1.v20170928-1405/" version="2.3.1.v20170928-1405">
+</feature>
+<feature id="org.eclipse.wb.doc.user.feature" plugin-identifier="org.eclipse.wb.doc.user" url="features/org.eclipse.wb.doc.user.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_fr" url="features/org.eclipse.babel.nls_eclipse_fr_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_pt_BR" url="features/org.eclipse.babel.nls_tools.cdt_pt_BR_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.jgit" url="features/org.eclipse.jgit_4.8.0.201706111038-r/" version="4.8.0.201706111038-r">
+</feature>
+<feature id="org.eclipse.mylyn.wikitext_feature" plugin-identifier="org.eclipse.mylyn.wikitext" url="features/org.eclipse.mylyn.wikitext_feature_3.0.6.201703111926/" version="3.0.6.201703111926">
+</feature>
+<feature id="org.eclipse.cdt.gnu.dsf.source" url="features/org.eclipse.cdt.gnu.dsf.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.mylyn.discovery" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.discovery_3.23.0.v20170411-1844/" version="3.23.0.v20170411-1844">
+</feature>
+<feature id="org.eclipse.cdt.gnu.build.source" url="features/org.eclipse.cdt.gnu.build.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.e4.rcp.source" url="features/org.eclipse.e4.rcp.source_1.6.1.v20170928-1359/" version="1.6.1.v20170928-1359">
+</feature>
+<feature id="org.eclipse.mylyn.versions" plugin-identifier="org.eclipse.mylyn.versions.core" url="features/org.eclipse.mylyn.versions_1.15.0.v20170411-2003/" version="1.15.0.v20170411-2003">
+</feature>
+<feature id="org.eclipse.equinox.p2.core.feature" url="features/org.eclipse.equinox.p2.core.feature_1.4.1.v20170928-1405/" version="1.4.1.v20170928-1405">
+</feature>
+<feature id="org.eclipse.ecf.filetransfer.ssl.feature" url="features/org.eclipse.ecf.filetransfer.ssl.feature_1.1.0.v20170110-1317/" version="1.1.0.v20170110-1317">
+</feature>
+<feature id="org.eclipse.wb.swing.doc.user.feature" plugin-identifier="org.eclipse.wb.swing.doc.user" url="features/org.eclipse.wb.swing.doc.user.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.mylyn.tasks.ide" plugin-identifier="org.eclipse.mylyn.tasks.core" url="features/org.eclipse.mylyn.tasks.ide_3.23.1.v20170623-0008/" version="3.23.1.v20170623-0008">
+</feature>
+<feature id="org.eclipse.userstorage" url="features/org.eclipse.userstorage_1.1.0.v20170526-1605/" version="1.1.0.v20170526-1605">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_hi" url="features/org.eclipse.babel.nls_eclipse_hi_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_pl" url="features/org.eclipse.babel.nls_tools.cdt_pl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_hu" url="features/org.eclipse.babel.nls_eclipse_hu_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.commons" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons_3.23.0.v20170503-0014/" version="3.23.0.v20170503-0014">
+</feature>
+<feature id="org.eclipse.mylyn.ide_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.ide_feature_3.23.0.v20170411-2108/" version="3.23.0.v20170411-2108">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_pt" url="features/org.eclipse.babel.nls_tools.cdt_pt_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_zh_TW" url="features/org.eclipse.babel.nls_tools.cdt_zh_TW_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.m2e.feature" plugin-identifier="org.eclipse.m2e.core" url="features/org.eclipse.m2e.feature_1.8.2.20171007-0217/" version="1.8.2.20171007-0217">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_zh_TW" url="features/org.eclipse.babel.nls_eclipse_zh_TW_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.git" plugin-identifier="org.eclipse.mylyn.versions.core" url="features/org.eclipse.mylyn.git_1.15.0.v20170411-2003/" version="1.15.0.v20170411-2003">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_id" url="features/org.eclipse.babel.nls_eclipse_id_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.epp.package.java.feature" plugin-identifier="org.eclipse.epp.package.java" url="features/org.eclipse.epp.package.java.feature_4.7.1.20171005-1200/" version="4.7.1.20171005-1200">
+</feature>
+<feature id="org.eclipse.wst.common_ui.feature" url="features/org.eclipse.wst.common_ui.feature_3.9.1.v201707201954/" version="3.9.1.v201707201954">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_iw" url="features/org.eclipse.babel.nls_eclipse_iw_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_zh" url="features/org.eclipse.babel.nls_eclipse_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_it" url="features/org.eclipse.babel.nls_eclipse_it_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.team_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.team_feature_3.23.0.v20170411-2108/" version="3.23.0.v20170411-2108">
+</feature>
+<feature id="org.eclipse.cdt.gnu.dsf" url="features/org.eclipse.cdt.gnu.dsf_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.cdt.sdk" url="features/org.eclipse.cdt.sdk_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ja" url="features/org.eclipse.babel.nls_eclipse_ja_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_modeling.graphiti_zh" url="features/org.eclipse.babel.nls_modeling.graphiti_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_no" url="features/org.eclipse.babel.nls_tools.cdt_no_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_nl" url="features/org.eclipse.babel.nls_tools.cdt_nl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.ecf.core.feature" url="features/org.eclipse.ecf.core.feature_1.4.0.v20170516-2248/" version="1.4.0.v20170516-2248">
+</feature>
+<feature id="org.eclipse.babel.nls_soa.bpmn2-modeler_zh" url="features/org.eclipse.babel.nls_soa.bpmn2-modeler_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.core.ui.feature" plugin-identifier="org.eclipse.wb.core.ui" url="features/org.eclipse.wb.core.ui.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_technology.egit_zh" url="features/org.eclipse.babel.nls_technology.egit_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ko" url="features/org.eclipse.babel.nls_eclipse_ko_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt" url="features/org.eclipse.cdt_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_modeling.emf_zh" url="features/org.eclipse.babel.nls_modeling.emf_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ku" url="features/org.eclipse.babel.nls_eclipse_ku_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_sv" url="features/org.eclipse.babel.nls_tools.cdt_sv_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_technology.jgit_zh" url="features/org.eclipse.babel.nls_technology.jgit_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_cs" url="features/org.eclipse.babel.nls_tools.cdt_cs_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.buildship" plugin-identifier="org.eclipse.buildship.branding" url="features/org.eclipse.buildship_2.1.2.v20170807-1324/" version="2.1.2.v20170807-1324">
+</feature>
+<feature id="org.eclipse.wb.rcp.doc.user.feature" plugin-identifier="org.eclipse.wb.rcp.doc.user" url="features/org.eclipse.wb.rcp.doc.user.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.wst.xml_core.feature" url="features/org.eclipse.wst.xml_core.feature_3.9.1.v201707042225/" version="3.9.1.v201707042225">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_tl" url="features/org.eclipse.babel.nls_tools.cdt_tl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_en_AA" url="features/org.eclipse.babel.nls_eclipse_en_AA_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_th" url="features/org.eclipse.babel.nls_tools.cdt_th_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_de" url="features/org.eclipse.babel.nls_tools.cdt_de_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.gdb.source" plugin-identifier="org.eclipse.cdt.gdb" url="features/org.eclipse.cdt.gdb.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_lt" url="features/org.eclipse.babel.nls_eclipse_lt_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_tr" url="features/org.eclipse.babel.nls_tools.cdt_tr_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_da" url="features/org.eclipse.babel.nls_tools.cdt_da_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.gnu.debug.source" url="features/org.eclipse.cdt.gnu.debug.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.tracecompass_zh" url="features/org.eclipse.babel.nls_tools.tracecompass_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.rcp" url="features/org.eclipse.rcp_4.7.1.v20171009-0410/" version="4.7.1.v20171009-0410">
+</feature>
+<feature id="net.sourceforge.eclipsesdcc.feature" url="features/net.sourceforge.eclipsesdcc.feature_1.0.0/" version="1.0.0">
+</feature>
+<feature id="org.eclipse.cvs" url="features/org.eclipse.cvs_1.4.401.v20171009-0410/" version="1.4.401.v20171009-0410">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ml" url="features/org.eclipse.babel.nls_eclipse_ml_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_uk" url="features/org.eclipse.babel.nls_tools.cdt_uk_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wst.xml_userdoc.feature" url="features/org.eclipse.wst.xml_userdoc.feature_3.9.1.v201707252002/" version="3.9.1.v201707252002">
+</feature>
+<feature id="org.eclipse.mylyn.commons.repositories.http" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.repositories.http_1.15.0.v20170411-1844/" version="1.15.0.v20170411-1844">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_mn" url="features/org.eclipse.babel.nls_eclipse_mn_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_webtools_zh" url="features/org.eclipse.babel.nls_webtools_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ar" url="features/org.eclipse.babel.nls_tools.cdt_ar_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.jdt" url="features/org.eclipse.jdt_3.13.1.v20171009-0410/" version="3.13.1.v20171009-0410">
+</feature>
+<feature id="org.eclipse.emf.common" url="features/org.eclipse.emf.common_2.13.0.v20170609-0707/" version="2.13.0.v20170609-0707">
+</feature>
+<feature id="org.eclipse.egit.mylyn" plugin-identifier="org.eclipse.egit" url="features/org.eclipse.egit.mylyn_4.8.0.201706111038-r/" version="4.8.0.201706111038-r">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_nl" url="features/org.eclipse.babel.nls_eclipse_nl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_no" url="features/org.eclipse.babel.nls_eclipse_no_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ro" url="features/org.eclipse.babel.nls_tools.cdt_ro_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.oomph.setup" url="features/org.eclipse.oomph.setup_1.8.0.v20170531-0903/" version="1.8.0.v20170531-0903">
+</feature>
+<feature id="org.eclipse.babel.nls_technology.packaging_zh" url="features/org.eclipse.babel.nls_technology.packaging_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_bg" url="features/org.eclipse.babel.nls_tools.cdt_bg_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ru" url="features/org.eclipse.babel.nls_tools.cdt_ru_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.native.source" url="features/org.eclipse.cdt.native.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_sl" url="features/org.eclipse.babel.nls_tools.cdt_sl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_sk" url="features/org.eclipse.babel.nls_tools.cdt_sk_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.recommenders.mylyn.rcp.feature" plugin-identifier="org.eclipse.recommenders.mylyn.rcp" url="features/org.eclipse.recommenders.mylyn.rcp.feature_2.4.10.v20170911-1410/" version="2.4.10.v20170911-1410">
+</feature>
+<feature id="org.eclipse.platform" url="features/org.eclipse.platform_4.7.1.v20171009-0410/" version="4.7.1.v20171009-0410">
+</feature>
+<feature id="org.eclipse.epp.logging.aeri.feature" url="features/org.eclipse.epp.logging.aeri.feature_2.0.6.v20170906-1226/" version="2.0.6.v20170906-1226">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_sr" url="features/org.eclipse.babel.nls_tools.cdt_sr_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_ca" url="features/org.eclipse.babel.nls_tools.cdt_ca_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.rcp.feature" plugin-identifier="org.eclipse.wb.rcp" url="features/org.eclipse.wb.rcp.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_pt_BR" url="features/org.eclipse.babel.nls_eclipse_pt_BR_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.e4.rcp" url="features/org.eclipse.e4.rcp_1.6.1.v20170928-1359/" version="1.6.1.v20170928-1359">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.tm_zh" url="features/org.eclipse.babel.nls_tools.tm_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_technology.recommenders_zh" url="features/org.eclipse.babel.nls_technology.recommenders_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.wikitext.editors_feature" plugin-identifier="org.eclipse.mylyn.wikitext" url="features/org.eclipse.mylyn.wikitext.editors_feature_3.0.6.201703111926/" version="3.0.6.201703111926">
+</feature>
+<feature id="org.eclipse.m2e.logback.feature" plugin-identifier="org.eclipse.m2e.logback.configuration" url="features/org.eclipse.m2e.logback.feature_1.8.2.20171007-0217/" version="1.8.2.20171007-0217">
+</feature>
+<feature id="org.eclipse.wst.xml_ui.feature" plugin-identifier="org.eclipse.wst.xml.ui" url="features/org.eclipse.wst.xml_ui.feature_3.9.1.v201707252002/" version="3.9.1.v201707252002">
+</feature>
+<feature id="org.eclipse.rcp.source" url="features/org.eclipse.rcp.source_4.7.1.v20171009-0410/" version="4.7.1.v20171009-0410">
+</feature>
+<feature id="org.eclipse.wb.layout.group.feature" plugin-identifier="org.eclipse.wb.layout.group" url="features/org.eclipse.wb.layout.group.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_pl" url="features/org.eclipse.babel.nls_eclipse_pl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_hi" url="features/org.eclipse.babel.nls_tools.cdt_hi_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.xwt.feature" plugin-identifier="org.eclipse.wb.xwt" url="features/org.eclipse.wb.xwt.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_pt" url="features/org.eclipse.babel.nls_eclipse_pt_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.eclemma.feature" plugin-identifier="org.eclipse.eclemma.ui" url="features/org.eclipse.eclemma.feature_3.0.0.201706140232/" version="3.0.0.201706140232">
+</feature>
+<feature id="org.eclipse.epp.package.common.feature" url="features/org.eclipse.epp.package.common.feature_4.7.1.20171005-1200/" version="4.7.1.20171005-1200">
+</feature>
+<feature id="org.eclipse.wb.core.java.feature" url="features/org.eclipse.wb.core.java.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_hu" url="features/org.eclipse.babel.nls_tools.cdt_hu_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.equinox.p2.discovery.feature" url="features/org.eclipse.equinox.p2.discovery.feature_1.1.1.v20170906-1259/" version="1.1.1.v20170906-1259">
+</feature>
+<feature id="org.eclipse.equinox.p2.rcp.feature" url="features/org.eclipse.equinox.p2.rcp.feature_1.3.1.v20170928-1405/" version="1.3.1.v20170928-1405">
+</feature>
+<feature id="org.eclipse.mylyn.hudson" plugin-identifier="org.eclipse.mylyn.builds.core" url="features/org.eclipse.mylyn.hudson_1.15.0.v20170411-2141/" version="1.15.0.v20170411-2141">
+</feature>
+<feature id="org.eclipse.epp.mpc" plugin-identifier="org.eclipse.epp.mpc.ui" url="features/org.eclipse.epp.mpc_1.6.2.v20171004-2006/" version="1.6.2.v20171004-2006">
+</feature>
+<feature id="org.eclipse.recommenders.snipmatch.rcp.feature" plugin-identifier="org.eclipse.recommenders.snipmatch.rcp" url="features/org.eclipse.recommenders.snipmatch.rcp.feature_2.4.10.v20170911-1410/" version="2.4.10.v20170911-1410">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_id" url="features/org.eclipse.babel.nls_tools.cdt_id_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.gdb" url="features/org.eclipse.cdt.gdb_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_el" url="features/org.eclipse.babel.nls_tools.cdt_el_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.cdt.platform.source" url="features/org.eclipse.cdt.platform.source_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.pde" url="features/org.eclipse.pde_3.13.1.v20171009-0537/" version="3.13.1.v20171009-0537">
+</feature>
+<feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature" url="features/org.eclipse.ecf.filetransfer.httpclient4.ssl.feature_1.1.0.v20170110-1317/" version="1.1.0.v20170110-1317">
+</feature>
+<feature id="org.eclipse.mylyn.java_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.java_feature_3.23.0.v20170411-2108/" version="3.23.0.v20170411-2108">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_eu" url="features/org.eclipse.babel.nls_tools.cdt_eu_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_et" url="features/org.eclipse.babel.nls_tools.cdt_et_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_es" url="features/org.eclipse.babel.nls_tools.cdt_es_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.commons.repositories" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.repositories_1.15.0.v20170411-1844/" version="1.15.0.v20170411-1844">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ar" url="features/org.eclipse.babel.nls_eclipse_ar_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ro" url="features/org.eclipse.babel.nls_eclipse_ro_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_en_CA" url="features/org.eclipse.babel.nls_eclipse_en_CA_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_en_AA" url="features/org.eclipse.babel.nls_tools.cdt_en_AA_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_vi" url="features/org.eclipse.babel.nls_tools.cdt_vi_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_bg" url="features/org.eclipse.babel.nls_eclipse_bg_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.monitor" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.monitor_3.23.0.v20170411-1844/" version="3.23.0.v20170411-1844">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ru" url="features/org.eclipse.babel.nls_eclipse_ru_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_fa" url="features/org.eclipse.babel.nls_tools.cdt_fa_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.css.feature" plugin-identifier="org.eclipse.wb.css" url="features/org.eclipse.wb.css.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_en_AU" url="features/org.eclipse.babel.nls_tools.cdt_en_AU_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.rcp.SWT_AWT_support" plugin-identifier="org.eclipse.wb.rcp.SWT_AWT" url="features/org.eclipse.wb.rcp.SWT_AWT_support_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.babel.nls_modeling.mdt.bpmn2_zh" url="features/org.eclipse.babel.nls_modeling.mdt.bpmn2_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.equinox.p2.extras.feature" url="features/org.eclipse.equinox.p2.extras.feature_1.3.1.v20170928-1405/" version="1.3.1.v20170928-1405">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_fi" url="features/org.eclipse.babel.nls_tools.cdt_fi_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_sk" url="features/org.eclipse.babel.nls_eclipse_sk_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.cdt_fr" url="features/org.eclipse.babel.nls_tools.cdt_fr_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_datatools_zh" url="features/org.eclipse.babel.nls_datatools_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_ca" url="features/org.eclipse.babel.nls_eclipse_ca_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_sq" url="features/org.eclipse.babel.nls_eclipse_sq_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_sr" url="features/org.eclipse.babel.nls_eclipse_sr_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.builds" plugin-identifier="org.eclipse.mylyn.builds.core" url="features/org.eclipse.mylyn.builds_1.15.0.v20170411-2141/" version="1.15.0.v20170411-2141">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_sl" url="features/org.eclipse.babel.nls_eclipse_sl_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.mylyn.context_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.context_feature_3.23.0.v20170414-0629/" version="3.23.0.v20170414-0629">
+</feature>
+<feature id="org.eclipse.babel.nls_tools.gef_zh" url="features/org.eclipse.babel.nls_tools.gef_zh_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.wb.swing.feature" plugin-identifier="org.eclipse.wb.swing" url="features/org.eclipse.wb.swing.feature_1.9.0/" version="1.9.0">
+</feature>
+<feature id="org.eclipse.cdt.gnu.debug" url="features/org.eclipse.cdt.gnu.debug_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.cdt.native" url="features/org.eclipse.cdt.native_9.3.3.201710130142/" version="9.3.3.201710130142">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_sv" url="features/org.eclipse.babel.nls_eclipse_sv_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+<feature id="org.eclipse.oomph.setup.core" url="features/org.eclipse.oomph.setup.core_1.8.0.v20170531-0903/" version="1.8.0.v20170531-0903">
+</feature>
+<feature id="org.eclipse.recommenders.news.rcp.feature" plugin-identifier="org.eclipse.recommenders.news" url="features/org.eclipse.recommenders.news.rcp.feature_2.4.10.v20170911-1410/" version="2.4.10.v20170911-1410">
+</feature>
+<feature id="org.eclipse.babel.nls_eclipse_en_AU" url="features/org.eclipse.babel.nls_eclipse_en_AU_4.7.0.v20171231020002/" version="4.7.0.v20171231020002">
+</feature>
+</site>
+</config>

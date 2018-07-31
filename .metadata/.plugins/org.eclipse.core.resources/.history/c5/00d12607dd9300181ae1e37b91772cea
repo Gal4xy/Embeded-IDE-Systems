@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+       <!--   -->
+      <extension
+         point="org.eclipse.cdt.debug.core.CDebugger">
+        <debugger
+              class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger5"
+              cpu="*"
+              id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger5"
+              modes="run"
+              name="vc33 Debugger"
+              platform="*">
+        </debugger>
+      <debugger
+            platform="*"
+            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"
+            cpu="*"
+            name="sparc-elf GDB Debugger"
+            modes="run"
+            id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"/>
+           
+            
+        <debugger
+        platform="*"
+        class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger2"
+        cpu="*"
+        name="TIC6416 Debugger"
+        modes="run"
+        id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger2"/>
+        <debugger
+              class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger3"
+              cpu="*"
+              id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger3"
+              modes="run"
+              name="TIC6713 Debugger"
+              platform="*">
+        </debugger>
+        <debugger
+              class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger4"
+              cpu="*"
+              id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger4"
+              modes="run"
+              name="TIC3X Debugger"
+              platform="*">
+        </debugger>
+   </extension>
+   <extension
+         point="org.eclipse.cdt.debug.ui.CDebuggerPage">
+         <debuggerPage
+            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage"
+            debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"
+            id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage">
+         </debuggerPage>
+         <debuggerPage
+            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage2"
+            debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger2"
+            id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage2">
+         </debuggerPage>
+         <debuggerPage
+            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage3"
+            debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger3"
+            id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage3">
+         </debuggerPage>
+         <debuggerPage
+            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage4"
+            debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger4"
+            id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage4">
+         </debuggerPage>
+         <debuggerPage
+               class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage5"
+               debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger5"
+               id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage5">
+         </debuggerPage>
+   </extension>
+	   
+	   <extension
+	         point="org.eclipse.debug.core.launchConfigurationTypes">
+	      <launchConfigurationType
+	            delegate="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.launch.LaunchDelegate"
+	            id="com.gaisler.eclipse.plugins.cdt.launch.LaunchConfigurationType"
+	            modes="debug,run"
+	            name="%SzmonCDTLaunch.name"
+	            public="true"
+	            sourceLocatorId="com.bjsasc.gdbdebugger.sourceLocator"
+	            sourcePathComputerId="com.bjsasc.gdbdebugger.gdbsourcePathComputer"/>
+	      <launchConfigurationType
+	            delegate="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.launch.external.SzmonLaunchConfigurationDelegate"
+	            id="com.gaisler.eclipse.plugins.cdt.launch.external.LaunchConfigurationType"
+	            modes="run,debug"
+	            name="TSIM2/SZMON launcher"/>
+	   </extension>
+	   <extension
+	         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+	      <launchConfigurationTypeImage
+	            configTypeID="com.gaisler.eclipse.plugins.cdt.launch.LaunchConfigurationType"
+	            icon="icons/small_gr.gif"
+	            id="com.gaisler.eclipse.plugins.cdt.launch.LaunchConfigurationTypeImage"/>
+	      <launchConfigurationTypeImage
+	            configTypeID="com.gaisler.eclipse.plugins.cdt.launch.external.LaunchConfigurationType"
+	            icon="icons/small_gr.gif"
+	            id="com.gaisler.eclipse.plugins.launchConfigurationTypeImage1"/>
+	   </extension>
+	   <extension
+	         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+	      <launchConfigurationTabGroup
+	            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.launch.LaunchConfigurationTabGroup"
+	            id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.launch.LaunchConfigurationTabGroup"
+	            type="com.gaisler.eclipse.plugins.cdt.launch.LaunchConfigurationType"/>
+	      <launchConfigurationTabGroup
+	            class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.launch.external.SzmonLaunchConfigurationTabGroup"
+	            description="%SzmonSingleLaunch.desc"
+	            id="com.gaisler.eclipse.plugins.cdt.launch.external.LaunchConfigurationTabGroup"
+	            type="com.gaisler.eclipse.plugins.cdt.launch.external.LaunchConfigurationType"/>
+	   </extension>
+
+
+		<extension
+         point="org.eclipse.debug.core.sourcePathComputers">
+      <sourcePathComputer
+            class="com.bjsasc.gdbdebugger.sourcelookup.CygWinSourcePathComputerDelegate"
+            id="com.bjsasc.gdbdebugger.gdbsourcePathComputer"/>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.sourceLocators">
+      <sourceLocator
+            class="com.bjsasc.gdbdebugger.sourcelookup.CygWinSourceLookupDirector"
+            id="com.bjsasc.gdbdebugger.sourceLocator"
+            name="gdbdebuggerLocators">
+      </sourceLocator>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.sourceContainerTypes">
+      <sourceContainerType
+            class="com.bjsasc.gdbdebugger.sourcelookup.CygWinSourceContainerType"
+            description="sourceContainerType"
+            id="com.bjsasc.gdbdebugger.sourceContainerType"
+            name="name">
+      </sourceContainerType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.sourceContainerPresentations">
+      <sourceContainerPresentation
+            browserClass="com.bjsasc.gdbdebugger.sourcelookup.CygWinSourceContainerBrowser"
+            containerTypeID="com.bjsasc.gdbdebugger.sourceContainerType"
+            icon="icons/small_gr.gif.png"
+            id="com.bjsasc.gdbdebugger.sourceContainerPresentation">
+      </sourceContainerPresentation>
+   </extension>
+	  
+
+</plugin>

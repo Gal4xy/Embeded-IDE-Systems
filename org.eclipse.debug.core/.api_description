@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component name="org.eclipse.debug.core_3.7.0.v20110518" version="1.2">
+    <plugin id="org.eclipse.debug.core_3.7.0.v20110518"/>
+    <package name="org.eclipse.debug.core" visibility="1">
+        <type name="DebugException" restrictions="2"/>
+        <type name="DebugPlugin" restrictions="6"/>
+        <type name="IBreakpointManager" restrictions="3"/>
+        <type name="IExpressionManager" restrictions="3"/>
+        <type name="ILaunchConfiguration" restrictions="3"/>
+        <type name="ILaunchConfigurationType" restrictions="3"/>
+        <type name="ILaunchConfigurationWorkingCopy" restrictions="3"/>
+        <type name="ILaunchDelegate" restrictions="3"/>
+        <type name="ILaunchManager" restrictions="3"/>
+        <type name="ILaunchMode" restrictions="3"/>
+        <type name="IMemoryBlockManager" restrictions="3"/>
+        <type name="RefreshUtil" restrictions="6"/>
+    </package>
+    <package name="org.eclipse.debug.core.model" visibility="1">
+        <type name="IWatchExpression" restrictions="3"/>
+    </package>
+    <package name="org.eclipse.debug.core.sourcelookup" visibility="1">
+        <type name="ISourceContainerType" restrictions="3"/>
+        <type name="ISourcePathComputer" restrictions="3"/>
+    </package>
+    <package name="org.eclipse.debug.core.sourcelookup.containers" visibility="1">
+        <type name="ArchiveSourceContainer" restrictions="2"/>
+        <type name="ContainerSourceContainer" restrictions="2"/>
+        <type name="DefaultSourceContainer" restrictions="2"/>
+        <type name="DirectorySourceContainer" restrictions="2"/>
+        <type name="ExternalArchiveSourceContainer" restrictions="2"/>
+        <type name="FolderSourceContainer" restrictions="2"/>
+        <type name="LocalFileStorage" restrictions="2"/>
+        <type name="ProjectSourceContainer" restrictions="2"/>
+        <type name="WorkspaceSourceContainer" restrictions="2"/>
+        <type name="ZipEntryStorage" restrictions="2"/>
+    </package>
+</component>

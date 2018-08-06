@@ -32,9 +32,9 @@ public class SparcCDebuggerTab extends CDebuggerTab {
 					ICDTLaunchConfigurationConstants.ATTR_DEBUGGER_START_MODE,
 					ICDTLaunchConfigurationConstants.DEBUGGER_MODE_ATTACH);
 		} else {
-			config.setAttribute(
-					ICDTLaunchConfigurationConstants.ATTR_DEBUGGER_START_MODE,
-					ICDTLaunchConfigurationConstants.DEBUGGER_MODE_RUN);
+		//	config.setAttribute(
+			//		ICDTLaunchConfigurationConstants.ATTR_DEBUGGER_START_MODE,
+				//	ICDTLaunchConfigurationConstants.DEBUGGER_MODE_RUN);
 			config
 					.setAttribute(
 							ICDTLaunchConfigurationConstants.ATTR_DEBUGGER_STOP_AT_MAIN,

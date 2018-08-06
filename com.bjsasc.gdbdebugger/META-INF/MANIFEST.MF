@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.bjsasc.gdbdebugger;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Vendor: BJSASC
+Bundle-Vendor: Galaxy
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.cdt.managedbuilder.core;bundle-version="6.0.0",
@@ -12,8 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.cdt.launch;bundle-version="6.0.0",
  org.eclipse.cdt.core;bundle-version="5.1.2",
  org.eclipse.cdt.ui;bundle-version="5.1.2",
- org.eclipse.cdt.debug.core,
- com.bjsasc.debug.core;bundle-version="1.0.0"
+ org.eclipse.cdt.debug.core
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.cdt.core,

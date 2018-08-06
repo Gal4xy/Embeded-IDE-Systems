@@ -147,7 +147,7 @@ public class SparcElfSession
     for (int i=0;i<args.length;i++){
     	sb.append(args[i]+" ");
     }
-    System.out.println(sb.toString());
+    System.out.println("galllllaxy"+sb.toString());
     MIProcess pgdb = new MIProcessAdapter(args, monitor);
     SparcElfMiSession session;
     try

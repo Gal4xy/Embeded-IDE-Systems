@@ -18,11 +18,14 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 public class SparcElfGDBDebugger5 extends GDBCDIDebugger
 {
   public static final String DEBUGGER_ID = SparcElfGDBDebugger5.class.getName();
-  public static final String DEBUGGER_CMD= "vc33-gdb";
+  public static final String DEBUGGER_CMD= "c8051-gdb.exe";
 
   public Session createLaunchSession(ILaunchConfiguration config, IBinaryParser.IBinaryObject exe, IProgressMonitor monitor)
     throws CoreException
   {
+	  
+	  System.out.println("8051111 launching");
+	  
     Session session = null;
     boolean failed = false;
     try {

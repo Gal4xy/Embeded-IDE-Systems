@@ -10,11 +10,11 @@
               cpu="*"
               id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger5"
               modes="run"
-              name="vc33 Debugger"
+              name="c8051-Debugger"
               platform="*">
         </debugger>
         
-        <!--
+        
       <debugger
             platform="*"
             class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"
@@ -22,7 +22,7 @@
             name="sparc-elf GDB Debugger"
             modes="run"
             id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"/>
-           -->
+           
             
         <debugger
         platform="*"
@@ -50,12 +50,12 @@
    </extension>
    <extension
          point="org.eclipse.cdt.debug.ui.CDebuggerPage">
-       <!--  
+       
          <debuggerPage
             class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage"
             debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"
             id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage">
-         </debuggerPage>  -->
+         </debuggerPage>  
          
          <debuggerPage
             class="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage2"

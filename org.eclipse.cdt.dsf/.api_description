@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="org.eclipse.cdt.dsf_2.2.0.201106081058" version="1.2">
+<plugin id="org.eclipse.cdt.dsf_2.2.0.201106081058"/>
+<package name="org.eclipse.cdt.dsf.debug.service" visibility="1">
+<type name="BreakpointsMediator2" restrictions="0">
+<method name="breakpointsAdded" restrictions="8" signature="([Lorg/eclipse/debug/core/model/IBreakpoint;)V"/>
+<method name="breakpointsChanged" restrictions="8" signature="([Lorg/eclipse/debug/core/model/IBreakpoint;[Lorg/eclipse/core/resources/IMarkerDelta;)V"/>
+<method name="breakpointsRemoved" restrictions="8" signature="([Lorg/eclipse/debug/core/model/IBreakpoint;[Lorg/eclipse/core/resources/IMarkerDelta;)V"/>
+</type>
+<type name="IInstructionWithSize" restrictions="3"/>
+</package>
+</component>

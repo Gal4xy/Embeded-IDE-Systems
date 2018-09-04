@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.rcp.example.app.intro.Application">
+         </run>
+      </application>
+   </extension>
+   
+   
+   
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.rcp.example.app.intro.Perspective"
+            id="com.rcp.example.app.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="com.rcp.example.app.intro">
+      </intro>
+      <introProductBinding
+            introId="com.rcp.example.app.intro"
+            productId="com.rcp.example.app.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            introId="com.rcp.example.app.intro"
+            content="introContent.xml"
+            id="com.rcp.example.app.configId">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            content="ext.xml"
+            configId="com.rcp.example.app.configId">
+      </configExtension>
+   </extension>
+
+</plugin>

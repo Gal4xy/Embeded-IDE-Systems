@@ -25,11 +25,4 @@
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>org.eclipse.debug.ui_3.12.50.v20170920-1329.jar</name>
-			<type>1</type>
-			<location>C:/Users/Galaxy/Desktop/eclipse/plugins/org.eclipse.debug.ui_3.12.50.v20170920-1329.jar</location>
-		</link>
-	</linkedResources>
 </projectDescription>

@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.cdt.examples.dsf.pda.ui;singleton:=true
+Bundle-Version: 2.1.0.201712020452
+Bundle-ClassPath: org.eclipse.cdt.examples.dsf.pda.ui_2.1.0.201712020452.jar
+Bundle-Activator: org.eclipse.cdt.examples.dsf.pda.ui.PDAUIPlugin
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Export-Package: org.eclipse.cdt.examples.dsf.pda.ui,
+  org.eclipse.cdt.examples.dsf.pda.ui.breakpoints,
+  org.eclipse.cdt.examples.dsf.pda.ui.editor,
+  org.eclipse.cdt.examples.dsf.pda.ui.launcher
+Require-Bundle: org.eclipse.core.runtime,
+  org.eclipse.core.resources,
+  org.eclipse.debug.core,
+  org.eclipse.ui,
+  org.eclipse.debug.ui,
+  org.eclipse.jface.text,
+  org.eclipse.ui.editors,
+  org.eclipse.ui.workbench.texteditor,
+  org.eclipse.ui.ide,
+  org.eclipse.cdt.examples.dsf.pda,
+  org.eclipse.cdt.dsf,
+  org.eclipse.cdt.dsf.ui,
+  org.eclipse.cdt.debug.ui;bundle-version="7.2.0",
+  org.eclipse.cdt.debug.core
+Built-By: genie.cdt
+Build-Jdk: 1.8.0
+Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/cdt/org.eclipse.cdt.git;path="dsf/org.eclipse.cdt.examples.dsf.pda.ui";commitId=fdd005c96f173fb25360933cd40857da36a078df
+Created-By: Apache Maven 3.3.9
+Archiver-Version: Plexus Archiver
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

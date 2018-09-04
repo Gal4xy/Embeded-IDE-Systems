@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="org.eclipse.cdt.dsf.ui_2.2.0.201106081058" version="1.2">
+<plugin id="org.eclipse.cdt.dsf.ui_2.2.0.201106081058"/>
+<package name="org.eclipse.cdt.dsf.debug.ui" visibility="1">
+<type name="IDsfDebugUIConstants" restrictions="1"/>
+</package>
+<package name="org.eclipse.cdt.dsf.debug.ui.contexts" visibility="1">
+<type name="DsfSuspendTrigger" restrictions="0">
+<method name="eventDispatched" restrictions="8" signature="(Lorg/eclipse/cdt/dsf/datamodel/DataModelInitializedEvent;)V"/>
+</type>
+</package>
+<package name="org.eclipse.cdt.dsf.debug.ui.sourcelookup" visibility="1">
+<type name="InstructionPointerImageProvider" restrictions="6"/>
+</package>
+</component>

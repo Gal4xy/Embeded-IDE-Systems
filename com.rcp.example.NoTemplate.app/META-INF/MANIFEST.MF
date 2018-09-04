@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: App
+Bundle-SymbolicName: com.rcp.example.NoTemplate.app;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.rcp.example.notemplate.app.Activator
+Bundle-Vendor: RCP
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime,
+  org.eclipse.equinox.ds,
+  org.eclipse.equinox.util,
+  org.eclipse.equinox.event
+Bundle-RequiredExecutionEnvironment: JavaSE-9
+Bundle-ActivationPolicy: lazy

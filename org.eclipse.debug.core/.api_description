@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<component name="org.eclipse.debug.core_3.7.0.v20110518" version="1.2">
-    <plugin id="org.eclipse.debug.core_3.7.0.v20110518"/>
+<component name="org.eclipse.debug.core_3.11.0.v20170605-1534" version="1.2">
+    <plugin id="org.eclipse.debug.core_3.11.0.v20170605-1534"/>
     <package name="org.eclipse.debug.core" visibility="1">
         <type name="DebugException" restrictions="2"/>
         <type name="DebugPlugin" restrictions="6"/>
@@ -16,6 +16,7 @@
         <type name="RefreshUtil" restrictions="6"/>
     </package>
     <package name="org.eclipse.debug.core.model" visibility="1">
+        <type name="IStepFilter" restrictions="2"/>
         <type name="IWatchExpression" restrictions="3"/>
     </package>
     <package name="org.eclipse.debug.core.sourcelookup" visibility="1">

@@ -1,0 +1,8 @@
+PATH#C:\\IDE_workspaceworkspace\\Whets\\cov_data
+CPATH#C:\\IDE_workspaceworkspace\\Whets\\cov_data\\WHETS.C
+SRC#C:\\IDE_workspace\\Whets\\cov_data\\WHETS.srccov#WHETS.C#WHETS
+OBJ#C:\\IDE_workspaceworkspace\\Whets\\cov_data\\WHETS.objcov#WHETS.C#WHETS
+SRC#C:\\IDE_workspaceworkspace\\Whets\\cov_data\\TIME.srccov#TIME.C#WHETS
+OBJ#C:\\IDE_workspaceworkspace\\Whets\\cov_data\\TIME.objcov#TIME.C#WHETS
+PRJNAME#WHETS
+

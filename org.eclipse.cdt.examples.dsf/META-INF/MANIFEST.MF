@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.cdt.examples.dsf;singleton:=true
+Bundle-Version: 2.2.0.201712020452
+Bundle-ClassPath: org.eclipse.cdt.examples.dsf_2.2.0.201712020452.jar
+Bundle-Activator: org.eclipse.cdt.examples.dsf.DsfExamplesPlugin
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+  org.eclipse.core.runtime,
+  org.eclipse.debug.core,
+  org.eclipse.debug.ui,
+  org.eclipse.cdt.dsf,
+  org.eclipse.ui,
+  org.eclipse.cdt.dsf.ui,
+  org.apache.ant;bundle-version="1.7.0";resolution:=optional
+Build-Jdk: 1.8.0
+Eclipse-LazyStart: true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/cdt/org.eclipse.cdt.git;path="dsf/org.eclipse.cdt.examples.dsf";commitId=fdd005c96f173fb25360933cd40857da36a078df
+Created-By: Apache Maven 3.3.9
+Built-By: genie.cdt
+Archiver-Version: Plexus Archiver

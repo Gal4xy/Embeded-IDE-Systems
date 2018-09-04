@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            class="org.salever.rcp.examples.debug.launch.XmlLaunchShortcut"
+            icon="icons/sample.gif"
+            id="org.salever.rcp.debug.demo.xmlShortcut"
+            label="Launch XML debug"
+            modes="run, debug">
+         <configurationType
+               id="org.salever.rcp.debug.demo.xmlLaunchConfigurationType"></configurationType>
+          <contextualLaunch>
+             <enablement>
+                <with
+                      variable="selection">
+                   <count
+                         value="1">
+                   </count>
+                   <iterate>
+                      <or>
+                         <test
+                               property="org.eclipse.debug.ui.matchesPattern"
+                               value="*.xml">
+                         </test>
+                      </or>
+                   </iterate>
+                   
+                </with>
+             </enablement>
+          </contextualLaunch>
+      </shortcut>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="org.salever.rcp.examples.debug.launch.XMlLaunchConfigurationDelegate"
+            category="org.eclipse.ui.externaltools"
+            id="org.salever.rcp.debug.demo.xmlLaunchConfigurationType"
+            modes="run, debug"
+            name="Launch XML debug">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="org.salever.rcp.examples.debug.launch.XmlLaunchConfigurationTabGroup"
+            id="org.salever.rcp.debug.demo.xmllaunchConfigurationTabGroup"
+            type="org.salever.rcp.debug.demo.xmlLaunchConfigurationType">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="org.salever.rcp.debug.demo.xmlLaunchConfigurationType"
+            icon="icons/alt_window_16.gif"
+            id="org.salever.rcp.debug.demo.launchConfigurationTypeImage1">
+      </launchConfigurationTypeImage>
+   </extension>
+
+</plugin>

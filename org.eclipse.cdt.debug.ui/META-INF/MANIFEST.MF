@@ -1,64 +1,3094 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.cdt.debug.ui;singleton:=true
-Bundle-Version: 7.1.2.201202111925
-Bundle-ClassPath: org.eclipse.cdt.debug.ui_7.1.2.201202111925.jar,
- .
-Bundle-Activator: org.eclipse.cdt.debug.ui.CDebugUIPlugin
-Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: org.eclipse.cdt.debug.internal.ui;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.actions;x-friends:="org.eclipse.cdt.dsf.ui,org.eclipse.cdt.debug.ui.memory.memorybrowser",
- org.eclipse.cdt.debug.internal.ui.commands;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.dialogfields;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.dialogs;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.disassembly.commands;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.disassembly.dsf;x-friends:="org.eclipse.cdt.dsf.ui",
- org.eclipse.cdt.debug.internal.ui.disassembly.editor;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.disassembly.rendering;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.disassembly.viewer;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.editors;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.elements.adapters;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.launch;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.pinclone;x-friends:="org.eclipse.cdt.dsf.gdb.ui",
- org.eclipse.cdt.debug.internal.ui.preferences;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.propertypages;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.sourcelookup;x-friends:="org.eclipse.cdt.dsf.ui",
- org.eclipse.cdt.debug.internal.ui.views;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.views.executables;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.views.memory;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.views.modules;x-internal:=true,
- org.eclipse.cdt.debug.internal.ui.views.signals;x-internal:=true,
- org.eclipse.cdt.debug.ui,
- org.eclipse.cdt.debug.ui.breakpointactions,
- org.eclipse.cdt.debug.ui.breakpoints,
- org.eclipse.cdt.debug.ui.disassembly,
- org.eclipse.cdt.debug.ui.editors,
- org.eclipse.cdt.debug.ui.importexecutable,
- org.eclipse.cdt.debug.ui.preferences,
- org.eclipse.cdt.debug.ui.provisional;x-internal:=true,
- org.eclipse.cdt.debug.ui.sourcelookup
-Require-Bundle: org.eclipse.ui.ide;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.jface.text;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.ui.workbench.texteditor;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.ui.editors;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.core.resources;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.ui;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.debug.ui;bundle-version="[3.7.0,4.0.0)",
- org.eclipse.debug.core;bundle-version="[3.7.0,4.0.0)",
- org.eclipse.cdt.debug.core;bundle-version="[7.0.0,8.0.0)",
- org.eclipse.cdt.ui;bundle-version="[5.0.0,6.0.0)",
- org.eclipse.cdt.core;bundle-version="[5.0.0,6.0.0)",
- org.eclipse.core.runtime;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.ui.console;bundle-version="[3.1.100,4.0.0)",
- org.eclipse.ui.views;bundle-version="[3.2.0,4.0.0)",
- org.eclipse.core.filesystem,
- org.eclipse.core.expressions
-Built-By: hudsonbuild
-Build-Jdk: 1.6.0_21
-Created-By: Apache Maven
-Archiver-Version: Plexus Archiver
-Import-Package: com.ibm.icu.text
-Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-SymbolicName: org.eclipse.cdt.debug.ui; singleton:=true
+Require-Bundle: org.eclipse.ui.ide;bundle-version="[3.2.0,4.0.0)",org.
+ eclipse.jface.text;bundle-version="[3.2.0,4.0.0)",org.eclipse.ui.work
+ bench.texteditor;bundle-version="[3.2.0,4.0.0)",org.eclipse.ui.editor
+ s;bundle-version="[3.2.0,4.0.0)",org.eclipse.core.resources;bundle-ve
+ rsion="[3.2.0,4.0.0)",org.eclipse.ui;bundle-version="[3.2.0,4.0.0)",o
+ rg.eclipse.debug.ui;bundle-version="[3.7.0,4.0.0)",org.eclipse.debug.
+ core;bundle-version="[3.7.0,4.0.0)",org.eclipse.cdt.debug.core;bundle
+ -version="[7.0.0,8.0.0)",org.eclipse.cdt.ui;bundle-version="[5.0.0,6.
+ 0.0)",org.eclipse.cdt.core;bundle-version="[5.0.0,6.0.0)",org.eclipse
+ .core.runtime;bundle-version="[3.2.0,4.0.0)",org.eclipse.ui.console;b
+ undle-version="[3.1.100,4.0.0)",org.eclipse.ui.views;bundle-version="
+ [3.2.0,4.0.0)",org.eclipse.core.filesystem,org.eclipse.core.expressio
+ ns
+Bundle-Activator: org.eclipse.cdt.debug.ui.CDebugUIPlugin
+Export-Package: org.eclipse.cdt.debug.internal.ui;x-internal:=true,org
+ .eclipse.cdt.debug.internal.ui.actions;x-friends:="org.eclipse.cdt.ds
+ f.ui,org.eclipse.cdt.debug.ui.memory.memorybrowser",org.eclipse.cdt.d
+ ebug.internal.ui.commands;x-internal:=true,org.eclipse.cdt.debug.inte
+ rnal.ui.dialogfields;x-internal:=true,org.eclipse.cdt.debug.internal.
+ ui.dialogs;x-internal:=true,org.eclipse.cdt.debug.internal.ui.disasse
+ mbly.commands;x-internal:=true,org.eclipse.cdt.debug.internal.ui.disa
+ ssembly.dsf;x-friends:="org.eclipse.cdt.dsf.ui",org.eclipse.cdt.debug
+ .internal.ui.disassembly.editor;x-internal:=true,org.eclipse.cdt.debu
+ g.internal.ui.disassembly.rendering;x-internal:=true,org.eclipse.cdt.
+ debug.internal.ui.disassembly.viewer;x-internal:=true,org.eclipse.cdt
+ .debug.internal.ui.editors;x-internal:=true,org.eclipse.cdt.debug.int
+ ernal.ui.elements.adapters;x-internal:=true,org.eclipse.cdt.debug.int
+ ernal.ui.launch;x-internal:=true,org.eclipse.cdt.debug.internal.ui.pi
+ nclone;x-friends:="org.eclipse.cdt.dsf.gdb.ui",org.eclipse.cdt.debug.
+ internal.ui.preferences;x-internal:=true,org.eclipse.cdt.debug.intern
+ al.ui.propertypages;x-internal:=true,org.eclipse.cdt.debug.internal.u
+ i.sourcelookup;x-friends:="org.eclipse.cdt.dsf.ui",org.eclipse.cdt.de
+ bug.internal.ui.views;x-internal:=true,org.eclipse.cdt.debug.internal
+ .ui.views.executables;x-internal:=true,org.eclipse.cdt.debug.internal
+ .ui.views.memory;x-internal:=true,org.eclipse.cdt.debug.internal.ui.v
+ iews.modules;x-internal:=true,org.eclipse.cdt.debug.internal.ui.views
+ .signals;x-internal:=true,org.eclipse.cdt.debug.ui,org.eclipse.cdt.de
+ bug.ui.breakpointactions,org.eclipse.cdt.debug.ui.breakpoints,org.ecl
+ ipse.cdt.debug.ui.disassembly,org.eclipse.cdt.debug.ui.editors,org.ec
+ lipse.cdt.debug.ui.importexecutable,org.eclipse.cdt.debug.ui.preferen
+ ces,org.eclipse.cdt.debug.ui.provisional;x-internal:=true,org.eclipse
+ .cdt.debug.ui.sourcelookup
+Bundle-Version: 7.1.0.201106081058
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+Bundle-Name: %pluginName
+Import-Package: com.ibm.icu.text
+Bundle-ManifestVersion: 2
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModulesMessages.
+ class
+SHA1-Digest: MSeIbWaIu74hWbbZNsGeW+9XgMM=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/Messages.class
+SHA1-Digest: ad8cD1G4CNyz2tUXPBUc0s0uNE8=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargetAction.class
+SHA1-Digest: at+refnb7Z0cSGVlgzw2ex+Iq8U=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CRegisterMan
+ agerProxy.class
+SHA1-Digest: HeueZZnFlhrFOh+W4XxPxB3iu0M=
+
+Name: icons/obj16/start_tracing_obj.gif
+SHA1-Digest: GLpx71Mff2QgZgrRfgZa5UMYCFQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ReverseToggleCommandH
+ andler.class
+SHA1-Digest: kEP56f5Gwff1OfgPcTYI3Sc+VI8=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyE
+ lementContentProvider$2.class
+SHA1-Digest: BpSiyJYh+91dPaPZaZCrgPf74po=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider.class
+SHA1-Digest: a8FIZ7otIvOquJCW4Igcey5vKvM=
+
+Name: org/eclipse/cdt/debug/internal/ui/ToggleCBreakpointTester.class
+SHA1-Digest: fRO7CAPN+MLD9BCLElEy+vNgk3k=
+
+Name: icons/ovr16/error_ovr.gif
+SHA1-Digest: 837WZOYq5P1nCsjer7IptxeeAX0=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/RegistersVie
+ wColumnPresentationFactory.class
+SHA1-Digest: 7WwYraXxQjMHivfG4VfBEgkWiE4=
+
+Name: icons/elcl16/toolbar_pinned.gif
+SHA1-Digest: IycEvMkgySuB2wK17MCWcu6Vt88=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentProvider$4.class
+SHA1-Digest: BxxiQZpPoGTs6CnVZa3PIMoMfjk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $3.class
+SHA1-Digest: FntSm0Ykz/x7p43B9m/99+s7lLU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$6.class
+SHA1-Digest: CJApYuP2bDcCY2ojqgD4tMrjrwE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargetMoveToLineActi
+ on$DebugContextListener.class
+SHA1-Digest: V7oV2pcKi1OssBgg9BP1y8wbwx8=
+
+Name: icons/elcl16/det_pane_hide.gif
+SHA1-Digest: JSq4wcJO7adGNtk3jFIfEbDJKlo=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsView.clas
+ s
+SHA1-Digest: v+rWfJ+rNEXhk+/He96t71d6Kls=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/AddContainerActio
+ n.class
+SHA1-Digest: GXxEaoIId+D5QgrwD4K+pu/BIGk=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsPropertyPage$2
+ .class
+SHA1-Digest: e6Oxa3CGHhl935tRTMn55pv0T1k=
+
+Name: icons/obj16/eventbreakpoint_obj.gif
+SHA1-Digest: gYhgLNAgADPDuQNIjpe1aaOpbaU=
+
+Name: org/eclipse/cdt/debug/internal/ui/DebugMarkerAnnotationModelFact
+ ory.class
+SHA1-Digest: wNK8TJ5Bs7WMbAMY2Fml96JJaQU=
+
+Name: icons/ovr16/conditional_ovr_disabled.gif
+SHA1-Digest: WDOvP9UiwiiV72aAA2xCJRoIkQA=
+
+Name: org/eclipse/cdt/debug/internal/ui/CWatchExpressionDelegate$1.cla
+ ss
+SHA1-Digest: UnDpzrp82nQa0Obvzi3NebXo4ho=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/LoadSymbolsForAllActio
+ nDelegate$1.class
+SHA1-Digest: dPND7rA2hEzb64aw7rbupOnsPqA=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/CPropertyTester.class
+SHA1-Digest: RGMo4cDoxll7YZHMqlckVLoEAHA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointDialog$2.
+ class
+SHA1-Digest: 5J0pRNLzXTTCE8hjbkSNhpGxyns=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CRegisterMan
+ agerModelProxy.class
+SHA1-Digest: YBEXjZUionWoLdLypdnUqfs+D1w=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyE
+ lementLabelProvider.class
+SHA1-Digest: Pk1NyJseQxFulyBbFSNvicp9vCI=
+
+Name: icons/elcl16/memory_clear.gif
+SHA1-Digest: B5lDecPHdlRqP93VvjlR2+3YHGA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/EnableDisableBreakpoin
+ tRulerActionDelegate.class
+SHA1-Digest: IhWCaGa4by2pTOQeU1UO3PWLZIw=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesV
+ iewer$3.class
+SHA1-Digest: USBksNVLEaQjVs4tCSn1p1UhRss=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugUIUtils$1.class
+SHA1-Digest: XZcP8jGZXnrzrGwRPXSFctCkttU=
+
+Name: org/eclipse/cdt/debug/ui/CDebugUIPlugin.class
+SHA1-Digest: /JF0TBCUbwEGgrvJi0fxb/pRgug=
+
+Name: icons/obj16/vard_pointer.gif
+SHA1-Digest: +70AGuX1mrg2oZgdOHqOGT026Ho=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/ProgramRelativePa
+ thSourceContainerBrowser.class
+SHA1-Digest: lM6w5VZ7wI2FtaBJkmdFQjB3zjE=
+
+Name: icons/elcl16/disabled_co.gif
+SHA1-Digest: VTkpSjZcroZuvSbxIu8jegoPCj8=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$4.class
+SHA1-Digest: msJrHaBz1vU4fL11Jnpmc7XByo4=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerAc
+ tion.class
+SHA1-Digest: itzwrOparb+yeHC5ua17AGdMn0k=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractListenerAction
+ Delegate.class
+SHA1-Digest: W9fskhF9XDIIwc9e4gf3OOQgMa0=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/FlexibleSignalsV
+ iew$1.class
+SHA1-Digest: e9BKGkgqfBZ/gd+cXhSJrkBDmro=
+
+Name: icons/obj16/folder_obj.gif
+SHA1-Digest: FqxWDk18RgbYI+FKO7aa1lGJlFE=
+
+Name: icons/dlcl16/det_pane_under.gif
+SHA1-Digest: HfjU9BG47+U+/H3AsuDdgEyZ+/0=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsPreferencePage
+ $1.class
+SHA1-Digest: BrZqhyueR2d0wLDx7rUq8Qj1oGQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/IListAdapter.clas
+ s
+SHA1-Digest: EwtpQoW5J+HGx4f3OY5ZbB0UjSU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyAnnotationModel$3.class
+SHA1-Digest: j2GxcNvDr1qq4w7vq2++zXVLlNU=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ListDialogField$L
+ istViewerAdapter.class
+SHA1-Digest: dXvTUl/8fyVHX7K4KINdZ8iqXys=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ResumeAction.class
+SHA1-Digest: FcJNqMOpjsLgY5MBSsdVtcFha4k=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentElementLabelUpdate
+ .class
+SHA1-Digest: kz7E3Fpf3k1rD2dV973JktPQe3w=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RegisterGroupDialog$Re
+ gisterLabelProvider.class
+SHA1-Digest: FrhqHaNuG2TW5WfqLMNe9bbxc6M=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentUpdate.class
+SHA1-Digest: 9JKfZrso8c+4I0c79mNCEY1lfyQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractDebugActionDel
+ egate$DebugRequestJob.class
+SHA1-Digest: BqcjMoKaHwlACZG2qx2nml7+K+A=
+
+Name: icons/obj16/expression_obj.gif
+SHA1-Digest: rsMbRTBObwIJ0+xxfRl6z8/wb2Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrope
+ rtyPage.class
+SHA1-Digest: Vz13uRjKhYZYa3zoLbiL1v990lI=
+
+Name: icons/dlcl16/resume_at_line_co.gif
+SHA1-Digest: i/GjWdJlN1h4OAiTxmBwKuQO/yQ=
+
+Name: icons/obj16/reverse_toggle.gif
+SHA1-Digest: 9MsaCuEKUPrf4VMxg1rIItyqyxI=
+
+Name: icons/obj16/directory_obj.gif
+SHA1-Digest: DMMrc2Eefabgj8tNZ6vWn5Qvxro=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointUpdater.class
+SHA1-Digest: Vls6IlEYIVP4UYH3PfXzcT9Xee4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleTracepointAdapte
+ r.class
+SHA1-Digest: 7xveY2DSwGVsctC1s6ts9GNyKsc=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CDebugElemen
+ tLabelProviderFactory.class
+SHA1-Digest: pFgWwoZN8lUYlAZ7OknzhnYuRXo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToArrayActionHandl
+ er$CastToArrayDialog$1.class
+SHA1-Digest: DUS1e6hUDnVi6xctQyCoVK6UWgs=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$5.class
+SHA1-Digest: tx9BJW2JyZhWGTT5P8k6yB9Bbww=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractEditorActionDe
+ legate.class
+SHA1-Digest: 0QA5kCBLb7w66fsm3QJpEScLw/0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate.class
+SHA1-Digest: egNFm1TippfHZAjBV005IIBGnjs=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CompilationDirect
+ orySourceContainerBrowser.class
+SHA1-Digest: FzSm9idV2pEwv0eiqm0Q/x90bZQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/AddSourceContaine
+ rDialog.class
+SHA1-Digest: NOMkxdLR0C9b6FtWIdvadC/gMmA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate$CanCreateWatchpointRequest.class
+SHA1-Digest: mDdWM/c3hTStYHVO3MqO/AEnOOg=
+
+Name: icons/obj16/signal_obj.gif
+SHA1-Digest: xzavafHRzT2j8pO3W1HqWg2A1E0=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $PathMappingLabelProvider.class
+SHA1-Digest: 5wB8JrLIKUB6yLla6kQjCHtjHzg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$1.class
+SHA1-Digest: syW0hqCpz5PCjuXPFKsfwkmlNVA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/NumberFormatsContribut
+ ion$SelectNumberFormatAction.class
+SHA1-Digest: SUvbWQUhnHp8Z42FQ681vNLDLUw=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyBa
+ ckend$SetDebugContextResult.class
+SHA1-Digest: nqPUQb+MLw4b4kbYjttJSDyuPys=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentUpdate.class
+SHA1-Digest: skvyyNueNxPO5MspZFkLcAG55n8=
+
+Name: org/eclipse/cdt/debug/internal/ui/editors/DebugTextHover.class
+SHA1-Digest: ol+V1lbnsEoi9OopGFLAWtyKVr8=
+
+Name: icons/elcl16/enabled_co.gif
+SHA1-Digest: Ka6cTIH6PVjzjBFO5FbyHku+EDU=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleInstructionStepM
+ odeActionDelegate.class
+SHA1-Digest: 26uypHLf1zuyS/c8m4CzAisZ9do=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$DisassemblyRequest.class
+SHA1-Digest: ANykLDzNszCJbpN2EYJGE8SgVuM=
+
+Name: org/eclipse/cdt/debug/internal/ui/ErrorStatusHandler.class
+SHA1-Digest: 5n8bQ4GqG5F1Si7EFPA6NrbQWs0=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/ComboFieldEditor.c
+ lass
+SHA1-Digest: vUfWiqF+IQDhOPkzBudA/qNf7MI=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/LaunchMessages.class
+SHA1-Digest: j1PmE5UzaLB6QsrEjrtykzZnkNg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $DetailJob.class
+SHA1-Digest: KncuDhuJJGqPU3JIB8W4IvXrIJk=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CBreakpointPropertiesR
+ ulerAction.class
+SHA1-Digest: Q5DlkbP0X3aWAEO+eJuYLjhQOOs=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ .class
+SHA1-Digest: 1ueU+KnhjzYV8xnsYyAsMvjyY6A=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ReverseStepOverComman
+ dHandler.class
+SHA1-Digest: uM+OrUeOXQLZBtIYnULw0C6RyVQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/CApplicationLaunchShort
+ cut.class
+SHA1-Digest: hIAt21w3WwS43ds+Oe/JIZ6Z/Ws=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddGlobalsActionDelega
+ te.class
+SHA1-Digest: cEKRsP+H3N5w9KRVa7wV3PhiMbw=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/StringButtonDialo
+ gField.class
+SHA1-Digest: /dGMDczaOc5y+AZwvMhUSqLeAbA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CBreakpointPropertiesR
+ ulerAction$1.class
+SHA1-Digest: JgYkVOLqNC5myXMMkgGpvWEvz/8=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $1.class
+SHA1-Digest: q0ZvXnEd0JzboA9sQE+cNU9mKdo=
+
+Name: icons/dlcl16/trcpd_obj.gif
+SHA1-Digest: TBRsHZyLvMO50nYncB96vRuBbBk=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyE
+ lementContentProvider.class
+SHA1-Digest: bX6W8sRFXSZprBN+3hhIdt57FC8=
+
+Name: org/eclipse/cdt/debug/internal/ui/OverlayImageCache.class
+SHA1-Digest: EpbeaahvqT6vb1n8RS19oWksKlk=
+
+Name: icons/elcl16/move_to_line_co.gif
+SHA1-Digest: blS+O6FacAKNjF9HX8AJ484Pc5E=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/SelectionButtonDi
+ alogFieldGroup.class
+SHA1-Digest: 16sbLoTvTOwvJr2JXvTFZApJ6Nw=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesL
+ abelProvider$1.class
+SHA1-Digest: /37/p01gIYrePmoRq9QMLdezEfg=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugUIMessages.properties
+SHA1-Digest: eTVUFPQmelDbBss7PwwC1PeKhMA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RemoveAllGlobalsAction
+ Delegate.class
+SHA1-Digest: 86zEk3AOb0fy2gYjmbrYfKmORbE=
+
+Name: icons/obj16/write_obj_disabled.gif
+SHA1-Digest: hrMV+cbCLkplmhvOWpf2JIBLPCM=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/commands/OpenDisas
+ semblyHandler.class
+SHA1-Digest: dCOkEIvaF1Q6Cd3+2zXygp+4OZY=
+
+Name: org/eclipse/cdt/debug/internal/ui/IInternalCDebugUIConstants.cla
+ ss
+SHA1-Digest: DmtcZZkcy7gyqvxbpKST+JjGZ38=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/TargetProjectSour
+ ceContainerDialog$1.class
+SHA1-Digest: 7is0+UuqbML90X7XS7bN5hdrLyA=
+
+Name: icons/elcl16/function_brkpt_co.gif
+SHA1-Digest: NFxt/j6otpDhYj77/eI81uSjg/I=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$6.class
+SHA1-Digest: rBuajnmFugSi5QCLyET1QIw2TFg=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceLookupUIMes
+ sages.properties
+SHA1-Digest: quYeL8J+MnPujSCxR3Z1Uu6z6CM=
+
+Name: icons/obj16/var_aggr.gif
+SHA1-Digest: gfvJ67DcobThZdpJqwqio/jd5MI=
+
+Name: icons/elcl16/casttotype_co.gif
+SHA1-Digest: W1gu5HHMOEb7ATVGve3G4GSUgFE=
+
+Name: icons/obj16/reverse_resume.gif
+SHA1-Digest: 80FK/7HO+7slsl8/gsaZNPxZAMw=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CProjectSourceCon
+ tainerBrowser.class
+SHA1-Digest: suKmx/LHH3SL/dMWrvaOoBPApuc=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$3.class
+SHA1-Digest: DOk2L8+J8tUoD1QmNwml7zYOGFA=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$2$1.class
+SHA1-Digest: I+0hGLM6QO+BSSqlQC8nEGL9SG8=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$2.class
+SHA1-Digest: ZTrA9jFmaZb4pfRfnZUX5KHTj5s=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite$2.class
+SHA1-Digest: QTvjXuxkuQaQsF6PTwklnkyamsQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlockDia
+ log.class
+SHA1-Digest: +Lb7Uq4/3/EDg3n/LZOFPbMgK90=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$13.class
+SHA1-Digest: Ge7QfQAHEFjkPqeev90NqYeI2oo=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointContext.class
+SHA1-Digest: TSlucb1HO2I8WAx4AOL5Ny71H60=
+
+Name: org/eclipse/cdt/debug/ui/breakpoints/CBreakpointUIContributionFa
+ ctory.class
+SHA1-Digest: hfOAnvAHE1BzpYLDGSO7shTaxLU=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundAction$1SoundPla
+ yer.class
+SHA1-Digest: HZImMRa3aXMZHNmKOwjFMrd+kxU=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsViewConte
+ ntProvider.class
+SHA1-Digest: G3zqGc0GUC4igCadSLXRrFv4AKM=
+
+Name: org/eclipse/cdt/debug/ui/breakpoints/DefaultCBreakpointUIContrib
+ ution.class
+SHA1-Digest: 8/QPo5qp/1MI0zwHaZt8/KV/258=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyPos
+ ition.class
+SHA1-Digest: jZwDz+NMDXJCwkBtekDUdHDTOl4=
+
+Name: icons/obj16/vard_simple.gif
+SHA1-Digest: 3sFAV1FodzzqG80gxM5i45qNoOk=
+
+Name: org/eclipse/cdt/debug/internal/ui/EvaluationContextManager$1.cla
+ ss
+SHA1-Digest: rrG752deXq+FgJtOI5v0EpkjT9w=
+
+Name: icons/dlcl16/collapseall.gif
+SHA1-Digest: EN6RuFqPlyvDFFYtWeaHigGxVBI=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleContentPro
+ vider.class
+SHA1-Digest: RqglqxlyRW9/3VG9fmvX1uS80aQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/DebuggerTypesPage$
+ DebuggerTypesDialogField.class
+SHA1-Digest: MBWCPyTEq0e4C6gcyuHrLG6ACHI=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsViewEvent
+ Handler.class
+SHA1-Digest: wIi7JdbdUeL2pbkYAEEzRgqfzp0=
+
+Name: org/eclipse/cdt/debug/ui/UIMessages.properties
+SHA1-Digest: Q8N0qT7tMRt3IqD792h2rJhijTk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$1
+ $1.class
+SHA1-Digest: CTYGc/1mlaxEWUuxqyUBr4HhLiI=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolAction.cl
+ ass
+SHA1-Digest: gDPCUHfaMomX9DcareLcqfDvCjA=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$ConfigureColumnsAction$ColumnContentProvider.class
+SHA1-Digest: gr9/KCfWw3vUraKDx3SDevnHRPs=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/GlobalActionsList$1.c
+ lass
+SHA1-Digest: Fg5LzZTziFEn7v5caYArfQm8L7c=
+
+Name: icons/dlcl16/import.gif
+SHA1-Digest: KBgRjdXon6FcAufJ9wYEAVQ3SNw=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointUpdater$1.class
+SHA1-Digest: 14skmaDFhPrSZjudognj2j7hwAI=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $MapEntryDialog.class
+SHA1-Digest: mLbsSZx/tLHZiJtC3A43mc3mei8=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyAnnotationModel.class
+SHA1-Digest: St1ZyyywfShdpfPd6xT0wT+tKv0=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerAd
+ apterFactory.class
+SHA1-Digest: oumx5gY1/zwsmm7W5jGlKq1f2+w=
+
+Name: org/eclipse/cdt/debug/internal/ui/ColorManager.class
+SHA1-Digest: wA4q+maZU5FviL36J4zd1z6IfnU=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionDialog$1.class
+SHA1-Digest: blaBxTwiBdEOpu2EHhoykXLdxOw=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/MoveToLineActionDelega
+ te.class
+SHA1-Digest: VIuIVIK95j5dkmwd/l8zXFLCeeo=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogs/AddEventBreakpointDial
+ og$ContributedFields$1.class
+SHA1-Digest: ZtjPtmHOuLokG/OKhmkT8/j+IgA=
+
+Name: org/eclipse/cdt/debug/ui/provisional/IRepositionableMemoryRender
+ ing2.class
+SHA1-Digest: rTVzoIGHEPMivKCFkGILlsL5abk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$8.class
+SHA1-Digest: TAJgtL6OgR8J8jWpJK2b/1esDr0=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$7.class
+SHA1-Digest: TRWhBy70W4F3r+zLWzx4Uz1XlTo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddEventBreakpointActi
+ onDelegate.class
+SHA1-Digest: gXJXHtWe47gRsOuZaMMGpj1VgPw=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate$1$2.class
+SHA1-Digest: mABnja/vulS5n/8S+NToEBbKsFY=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugImageDescriptorRegistry$
+ 1.class
+SHA1-Digest: 7dgzYsrllOHQk2O9iJV+AzfMlLg=
+
+Name: icons/dlcl16/det_pane_hide.gif
+SHA1-Digest: H7jNrfazdT7Y5DKUjPNfMaqBuLc=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/NewMappingSourceC
+ ontainerBrowser.class
+SHA1-Digest: P+C2PC9ZLJx1OyFppU5fUuwRwH8=
+
+Name: icons/obj16/var_static.gif
+SHA1-Digest: YfQWeB0sbxO9igCmfY0vagwD9JU=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$1
+ .class
+SHA1-Digest: 4bSeYus2mSVgtdVvDN/dzd55ReA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToArrayActionHandl
+ er$CastToArrayDialog.class
+SHA1-Digest: 6qAdavvIuvAFIR54uHJW6Aqjtjk=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$DirectoryCellEditor.class
+SHA1-Digest: ANUBsi+j9ZJQ/B6XplA4rq2AB/4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CanFormatObjectTester.
+ class
+SHA1-Digest: X2TKOM4N4Rh1fWqNtbcelLtsJAQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/PropertyPageMess
+ ages.class
+SHA1-Digest: aEogSU+lw78AuQeGdThm9h4iKYs=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrope
+ rtyPage$BreakpointStringFieldEditor.class
+SHA1-Digest: jDPElG+rY940NrDo8/0xc/xD38Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/ICDebugPreferenceC
+ onstants.class
+SHA1-Digest: x2KZY0abT1iu1fEnk2En6O7mJ5A=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog.class
+SHA1-Digest: MasBUHFSzsOd+blIECPg0Lq7T+0=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$ConfigureColumnsAction$ColumnLabelProvider.class
+SHA1-Digest: Mag93j27rHoo6bU4XDFZaue5ISg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iewer$1.class
+SHA1-Digest: S71t5zCgv2Veh/mU07Sydh/uwDY=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ModuleProperties
+ .class
+SHA1-Digest: YODcVORgY3yg7AeKlrD9ErToMFk=
+
+Name: icons/elcl16/trcp_obj.gif
+SHA1-Digest: bsiLt3I7eib9vRHkEPjJS+ENtYc=
+
+Name: org/eclipse/cdt/debug/ui/CDebugUIPlugin$1.class
+SHA1-Digest: V1ZVTx/NMcFYHxJ/4kPdpWAty24=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnMemoryA
+ ctionDelegate.class
+SHA1-Digest: z9VGnAIVV6jzbq69RKqO9P5EYP8=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleCTracepointsTarg
+ etFactory.class
+SHA1-Digest: EssRvw0shxE4Gu30h6b3wRuIpPs=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$QuickParseJob.class
+SHA1-Digest: DU1ybnyVecUUb1NCUlzLpyLsiwQ=
+
+Name: icons/obj16/var_string.gif
+SHA1-Digest: AcoN22DRB5AohpYzeRLPZsKf3ik=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointContextActionFilter
+ .class
+SHA1-Digest: TMS+YYjIrbtfXJycaIqyN1s94+4=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundActionComposite$
+ 3.class
+SHA1-Digest: +g/GlDB8UQp/GohT+OTSV+yzAl4=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $MapEntryDialog$2.class
+SHA1-Digest: hJHnyPwc5V/gbkyoMpK45KTY2iw=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RemoveGlobalsActionDel
+ egate$1.class
+SHA1-Digest: /jME5g09CkSpUe/no1TUXtCiGUw=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/Messages.pro
+ perties
+SHA1-Digest: hlpDJb6V8VpQ/17E9bheQpfvPEM=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ViewMemoryHandler.cla
+ ss
+SHA1-Digest: zmBL5jO06EOq6ZiS/64SofYat9c=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ResumeActionComposite
+ .class
+SHA1-Digest: E/VLXeKY9ESPURmHQi1KaqfE+KI=
+
+Name: icons/elcl16/showasarray_co.gif
+SHA1-Digest: Koy0WeX6xdEaBLHvCbDXCi3MIQM=
+
+Name: icons/dlcl16/rem_all_co.gif
+SHA1-Digest: Lzga6O7BecvsbN4K4oCi9U+di1k=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyE
+ lementLabelProvider$1.class
+SHA1-Digest: 037hx56J8Mfwp/R6S+UOyWL2q6k=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/StringDialogField
+ .class
+SHA1-Digest: CgP1p8oBrkNVa9qwbR1+jOa6NmQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToArrayActionHandl
+ er$1.class
+SHA1-Digest: maKORaR7aP1NsLnnYwGeSVVn2JI=
+
+Name: org/eclipse/cdt/debug/ui/preferences/ReadOnlyFieldEditor$1.class
+SHA1-Digest: KGP5OoWUtD/uGFzCLoQfXAZUJzY=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/AbstractImportExecutab
+ leWizard.class
+SHA1-Digest: 8ocEDP5ItPp3A/jP/Sbx28enUjo=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsPropertyPage.c
+ lass
+SHA1-Digest: BO18dyWEREmHPsRwaeWfG4OCcIM=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentProvider$2.class
+SHA1-Digest: zCSwOUfB7RiU0TpUlaTPcuroyAo=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $1.class
+SHA1-Digest: O5VvyRf1a81qDCmuo2/hUSqIRF8=
+
+Name: icons/obj16/disassembly_obj.gif
+SHA1-Digest: ptUEt6TMd2JqCtTau++i0bOdPJ4=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/LaunchMessages.properti
+ es
+SHA1-Digest: Js4MDxENOVhp9r0HzNk0jnQGheA=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$4.class
+SHA1-Digest: +SRIIrWTZpL15fkjfWjuhOcDApc=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrope
+ rtyPage$2.class
+SHA1-Digest: J5aPlz7s/ZNOscdGILfMhl/KV70=
+
+Name: icons/obj16/dir_anchor_obj.gif
+SHA1-Digest: yk+7APjNldgZRJZAY2WX0dvKHy0=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$1
+ $1$1.class
+SHA1-Digest: jFsCYBEOVEGk2mYJYA7SpC6hdQM=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsContentPr
+ ovider.class
+SHA1-Digest: Bppdx2j8fEZIDMSl0TadpWMTwxE=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite.class
+SHA1-Digest: 7dTXwXwTKXmxgKHl8NkH+lFHejI=
+
+Name: icons/obj16/prj_file_obj.gif
+SHA1-Digest: D7/Bf7f1C33ZHLxP0sanSOFyIVg=
+
+Name: icons/wizban/addsrcloc_wiz.gif
+SHA1-Digest: FFK8fpg6kQQDyz8VCaY6t8neTIY=
+
+Name: icons/dlcl16/rem_co.gif
+SHA1-Digest: 0Ti38UGxkUjNe5BpxPG2DqSeFiA=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/UngroupDebugContextsC
+ ommandHandler.class
+SHA1-Digest: nzZPsKRKGWLLEuCDmi25U3n5cqc=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerAc
+ tion$1.class
+SHA1-Digest: MQVjcM1ghozlxPQsxe9QIZ8+lWQ=
+
+Name: icons/elcl16/columns.gif
+SHA1-Digest: u6//SqJyMYn3JXB5R/0X59/n1Qg=
+
+Name: org/eclipse/cdt/debug/internal/ui/CValueDetailProvider.class
+SHA1-Digest: 1YikY37PmY48bKy0sqONvq7LY1c=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractDebugActionDel
+ egate.class
+SHA1-Digest: Jmw2gjEKyvj1Z2HZK+pUPJhB7GE=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ListDialogField$2
+ .class
+SHA1-Digest: ydJhg5AgiVd9bcY58jzCGJpjiSg=
+
+Name: icons/obj16/exec_view_obj.gif
+SHA1-Digest: gN2+Lr54Q64opFDCdYL/RbO3A3E=
+
+Name: icons/ovr16/function_ovr_disabled.gif
+SHA1-Digest: J/tkg6sK2UuavJmzz7EhZEYqIA4=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/CDIDisassembly
+ Retrieval$2.class
+SHA1-Digest: hz6mLNBZzngtjByIB2r+hy1Ects=
+
+Name: icons/obj16/abspath_obj.gif
+SHA1-Digest: FdAztGtZYo/Ic+ypWtUnkZ0+zGg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesV
+ iewer$1.class
+SHA1-Digest: Z8c9Nos2nRsgb3glaLwvdC17S0k=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ResumeAtLineAdapter$1.
+ class
+SHA1-Digest: 1s2NqWS7YzuWa2f8iAA8iTEkW84=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ThreadFilterEdit
+ or.class
+SHA1-Digest: R5cSmMJhllXoMFtVJOFd9BO5znA=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IElementToggleBreakpointAda
+ pter.class
+SHA1-Digest: g/U/r+lIuhmBQSV+0zJbZsNKNiQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/ElementAdapt
+ erMessages.properties
+SHA1-Digest: IUX+828BBIv8D1SIaBsHIvR4p3g=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$2.class
+SHA1-Digest: nXNi1JUo55HlSTwTGFGHrh5He5g=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceLookupUIMes
+ sages.class
+SHA1-Digest: vEMgTWJy/MmXliCGLOuWEyDZACE=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/AddSourceContaine
+ rDialog$2.class
+SHA1-Digest: IoJgCtEJotmFyNt/XwsUMJbMcec=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/LoadSymbolsForAllActio
+ nDelegate.class
+SHA1-Digest: u0EbS0Z0gxZHczDrD3nTkIVYrSM=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyAnnotationModel$1.class
+SHA1-Digest: uDaM9wbOZbSyfy8AFrBql8+EdKo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/PinDebugContextActionD
+ elegate.class
+SHA1-Digest: 3OPknDC5MWlFLJRXrpEsSvt5pfo=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CompilationDirect
+ orySourceContainerDialog$1.class
+SHA1-Digest: Rt8KzG+Zmk8qzxSrOi3ZVVuaDFw=
+
+Name: icons/obj16/readwrite_obj_disabled.gif
+SHA1-Digest: /rYxDFrwOTbNg0tF34DRI9kptM4=
+
+Name: icons/wizban/mapping_wiz.gif
+SHA1-Digest: K3z2waEAKAHTIIhqR2fimD+WBtw=
+
+Name: icons/dlcl16/signal0_co.gif
+SHA1-Digest: uOj2cPs3njnaYXpwo0c/dCduJX4=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/LogActionPage.class
+SHA1-Digest: KCZfEc9Rfr1mR92va5aQBJwI+G0=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsList$3.class
+SHA1-Digest: R296C1aKu2938d7FxxVu2PHj6Cg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleLabelProvi
+ der.class
+SHA1-Digest: IUbk0J81ZQTAeBDRtWauot0ZXeA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddGlobalsActionDelega
+ te$3.class
+SHA1-Digest: 6MwrqsNhqdu0X7W8E59ygqAqUDg=
+
+Name: icons/dlcl16/casttotype_co.gif
+SHA1-Digest: 8ZiNswisHJ9k0XhQ4J82rbCApEA=
+
+Name: icons/dlcl16/show_ascii.gif
+SHA1-Digest: FiJoi6OMus+xVKCuET/cNjE03Z8=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ThreadFilterEdit
+ or$CheckHandler.class
+SHA1-Digest: DQT7EX8hY3iiAzoxtlmjeBDMgd0=
+
+Name: org/eclipse/cdt/debug/ui/editors/AbstractDebugTextHover$1.class
+SHA1-Digest: jYyfSBZcm9I0F1HVb5bvMV3v30A=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$3.class
+SHA1-Digest: Kox/gk/iNytWu68lk5O32Foh2ms=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/PreferenceMessages
+ .class
+SHA1-Digest: QJgkn5PbgavcMF6moUCZxVohq6I=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/DialogField.class
+SHA1-Digest: 4Oj4ZmHXZWc3SAp7L1aVaTp9GGY=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$7.class
+SHA1-Digest: HI4MOY715dV4yK05qQckw4SYIow=
+
+Name: org/eclipse/cdt/debug/ui/breakpoints/ICBreakpointsUIContribution
+ User.class
+SHA1-Digest: vZWvtQWQqfeHORgG0yIHBrtWKEo=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$2$1.class
+SHA1-Digest: SPPn2aiF8SLmRCNlstkmMFDpNK8=
+
+Name: icons/obj16/readwrite_obj.gif
+SHA1-Digest: 7v/t71Bf5cMs0HEATescKa1DVwA=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$1
+ PlatformAction.class
+SHA1-Digest: KiOPMLvA6NnGRyiivizZGVQWRGo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToTypeActionHandle
+ r$CastToTypeDialog.class
+SHA1-Digest: x1fQzmJZ138djNBCX6ElROgZAPY=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/UncallCommandHandler.
+ class
+SHA1-Digest: 6A8ZeR4RRcQ32TUJGsVdtVHhHmU=
+
+Name: icons/obj16/showpaths_obj.gif
+SHA1-Digest: m+de6T6BMPvZ0A4A+1JVFyiq2Ug=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/editor/Disassembly
+ EditorManager$2.class
+SHA1-Digest: hbryEXpVNoHnoA/kt+OlNI0JMdI=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/editor/Disassembly
+ Editor.class
+SHA1-Digest: h2gTxACwcnurYs4sS0JYS5NmF74=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks.c
+ lass
+SHA1-Digest: yRHsm8xYmPFZ2dTL9KEX6/k/mbI=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/LabelPosition.
+ class
+SHA1-Digest: ZXZfDlsPgpppGgTJIdlnAzwMq4Q=
+
+Name: icons/obj16/var_env.gif
+SHA1-Digest: HoUIzJRmjoEEZdV2NBY/vNauTEc=
+
+Name: org/eclipse/cdt/debug/ui/preferences/ReadOnlyFieldEditor.class
+SHA1-Digest: ehTHi4kDP9H7NqIjcoRE/JM2mRg=
+
+Name: icons/dlcl16/refresh_co.gif
+SHA1-Digest: jGOkYZ8ImIbozOSOlIyhZtptk9E=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CDebugElemen
+ tAdapterFactory.class
+SHA1-Digest: lKxHAXuAGnggwDiCVpsV7cp0iN8=
+
+Name: org/eclipse/cdt/debug/internal/ui/SubstitutionTextReader.class
+SHA1-Digest: T1uC+2p6njWvs7gaV6NPUCnRxWY=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentElementAnnotationP
+ rovider.class
+SHA1-Digest: yHsXns31YsnDslbzk5OXEF2CKVc=
+
+Name: org/eclipse/cdt/debug/ui/ICDebuggerPageExtension.class
+SHA1-Digest: UIJYaF9ZkH0f5juumD0JOHdPomg=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/ErrorPosition.
+ class
+SHA1-Digest: zLD4+GVtvuwsnZjP8ohL5Gqx+RQ=
+
+Name: icons/elcl16/memory_update.gif
+SHA1-Digest: YXEq/QRtSmN8VLTY3nK0P2SBhYI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/DisableVariablesAction
+ Delegate.class
+SHA1-Digest: oiaDeQjPQUGHBB4n7qX0eAmU8GU=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebuggerPageAdapter.class
+SHA1-Digest: kJxLArXysjUrEq5JklhELxdEHBA=
+
+Name: icons/elcl16/watchpoint_co.gif
+SHA1-Digest: yk1bJxFBGoQAZdoLSJG7PCQbLPU=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$8.class
+SHA1-Digest: 36abUy1YOyRMjPaTFMIEWJjlV6A=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/AbstractDebugEventHandle
+ r$1.class
+SHA1-Digest: qH3lvhbc1sOFwPvMYGCEw8/vBgo=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$4.class
+SHA1-Digest: IVEhqAOJPNCai3YYeiohS052RKE=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/SelectionButtonDi
+ alogField$1.class
+SHA1-Digest: DSbdKzGx5frkEiZtLg8IB0rIG44=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/Disassembly
+ Pane$1.class
+SHA1-Digest: z/OzP1kAEjbe/q4sVkyBrQyK+EU=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/EnableDisableBreakpoin
+ tRulerAction.class
+SHA1-Digest: Ts3s7M+nxS+B7blZ8ZFmdwMi/Zk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$1.class
+SHA1-Digest: h6Zfr3iS7mIZGE1u7lnbWKE4A2E=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/NumberFormatsContribut
+ ion$1.class
+SHA1-Digest: K4RYHqjyuilFcofnjhFISFQOpI4=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$11.class
+SHA1-Digest: b8/NNmwPogm+H1FrCCgyD1oskKA=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ComboDialogField$
+ 2.class
+SHA1-Digest: DAZ5IOkuQxfHxSSkdXV1o9VS5E8=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentUpd
+ ate.class
+SHA1-Digest: F3/PHB0b9iDMKpVWp3GEF041ZZY=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/PinDebugContextActionD
+ elegate$2.class
+SHA1-Digest: MeXHRTzcutF0JlRQWI935odyHTA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/WatchpointExpressionVe
+ rifier.class
+SHA1-Digest: 4zW3NQ8h6PoaYt9zQnPws3gWngw=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $4.class
+SHA1-Digest: mwkZg9EEuumrucnfLk2IfY43hYo=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionPag
+ e.class
+SHA1-Digest: zKg38u/JcqJgwQFS5BA7LofKpTA=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/CApplicationLaunchShort
+ cut$3.class
+SHA1-Digest: b7ZaOC5c73jPCzSB2BSRWuuupzM=
+
+Name: icons/obj16/var_simple.gif
+SHA1-Digest: +/hxrshpYcF4fCSwu1aUq26lLoE=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugModelPresentation.class
+SHA1-Digest: W50CnLywcpZqhlh45VU4Pvz/8Ms=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iewer.class
+SHA1-Digest: D74TWmKAVxbVazS+agItMLe7GeI=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundActionPage.class
+SHA1-Digest: AzCtPUGEEXVDhK2xMOCUm+ydpKo=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalLabelProvi
+ der.class
+SHA1-Digest: HHzlqQv9zK3HWp09/IFWuAQMJq4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/SignalActionDelegate.c
+ lass
+SHA1-Digest: GIQU4+rHoBOhi+iLhvEqYdv8TWA=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionDialog.class
+SHA1-Digest: yH8Zsp0WuGZVYITHK1ryTKZfNzg=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/StringDialogField
+ $1.class
+SHA1-Digest: kqehkxw1OE8+8jXwEHqFQSjkLRQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CSourceNotFoundEd
+ itorInput.class
+SHA1-Digest: DRKf7w2tvvtwxZk9kpATN/MyEWU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/AddressRangePo
+ sition.class
+SHA1-Digest: XC7JDeYgkL2fl7UePFbZJC1SbzI=
+
+Name: icons/dlcl16/disassembly.gif
+SHA1-Digest: fwoohzzTr2EvpqD1fG8Zm/bbJ/Y=
+
+Name: icons/elcl16/show_paths.gif
+SHA1-Digest: UlkZWqlE0+3bCITOxaB0y1fkO9Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$AddressRequest.class
+SHA1-Digest: ufHgZnY/dLAscRyAVFBaSv0ajp8=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CompilationDirect
+ orySourceContainerDialog.class
+SHA1-Digest: l4Ad7qU4atEKyuvMVd7rU6Feh10=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RemoveAllGlobalsAction
+ Delegate$1.class
+SHA1-Digest: iqE2waczuv8So47Ob13shNJIlNM=
+
+Name: icons/elcl16/det_pane_right.gif
+SHA1-Digest: wpzXlnORNZ+xlgzyQudNiJGgYGs=
+
+Name: icons/obj16/eventbreakpointd_obj.gif
+SHA1-Digest: S0eiuzyEjemM8jItWxB4+p8Frf0=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerLa
+ belProvider.class
+SHA1-Digest: YF61bhai6ZufV5BrpTKWpUS4krw=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$6.class
+SHA1-Digest: yHL5GTbLMHjIJLZ6OCxHN/Vj/h4=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$5.class
+SHA1-Digest: RkasY+uuFNIoqHN29w/YA3ij3xA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/SignalPropertiesAction
+ Delegate$1.class
+SHA1-Digest: i8F2qXyJ4zjZVRThQB+6kEIZrcw=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/AbstractDisass
+ emblyBackend.class
+SHA1-Digest: 7xtKRmzXfR+TOS0PMaHTASBLaQ8=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyMessages.class
+SHA1-Digest: F3LCbtXmab0O4TVGcJgxzWsnkh0=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$16.class
+SHA1-Digest: L58OffHk4Jv4ybVnjBP1zYid//8=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/ViewIDCounterManager$
+ 3.class
+SHA1-Digest: dARD7cUmBZDcRNXr4T4ovpVN/wA=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/DisassemblyPrefere
+ ncePage.class
+SHA1-Digest: b6bU17zet0yahkSZlToJFK5mm+E=
+
+Name: icons/ovr16/installed_ovr_disabled.gif
+SHA1-Digest: MKBRfimVeyo6JJuhY4g+prRtbU4=
+
+Name: org/eclipse/cdt/debug/ui/sourcelookup/OldDefaultSourceLocator.cl
+ ass
+SHA1-Digest: RZHXBluQuFpe+pfWHN+wINVDzdQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iewer$ExecutablesDropAdapter.class
+SHA1-Digest: wP3sDZctsI5QKNIDh6J/s/oG9v0=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/commands/SetSteppi
+ ngModeHandler.class
+SHA1-Digest: QNvJlrmreKT3Psn+oZZ/fvyuzq0=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CDebugElemen
+ tProxyFactory.class
+SHA1-Digest: zhAO8NMCXUt4troAZDllHX26L4w=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrefe
+ renceStore.class
+SHA1-Digest: TwFIZiDOWBPPd8Ra8vup3Kdp5l0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ActionMessages.class
+SHA1-Digest: +Z6hERVLqc2reS3s2Py8gFY5538=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CStackFrameC
+ ontentProvider.class
+SHA1-Digest: TW0Whzw4w6rufOtRqJL8478MmBA=
+
+Name: org/eclipse/cdt/debug/ui/UIMessages.class
+SHA1-Digest: xbGZDhd+4pz0QfzVmNB1+oAjvDE=
+
+Name: icons/etool16/watch_exp.gif
+SHA1-Digest: gbhVbScZ5V97AjvtYXoG9Iy425Y=
+
+Name: org/eclipse/cdt/debug/ui/IPinProvider$IPinModelListener.class
+SHA1-Digest: n6TiIFz8C3pjTILGf17GBSdPJaQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/SignalPropertiesAction
+ Delegate.class
+SHA1-Digest: ppmLcobxOU3ubToDeZo9RgUJMDo=
+
+Name: org/eclipse/cdt/debug/internal/ui/SWTUtil.class
+SHA1-Digest: WC2aPCaPzVryo1SBdeSnxXe7uJo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate$1.class
+SHA1-Digest: R/VNdLjKOyusCaddVxtVYYgiEXE=
+
+Name: org/eclipse/cdt/debug/ui/IPinProvider$IPinElementHandle.class
+SHA1-Digest: c6FYNUiG/awBq2AAq+72ajpDVjs=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundActionComposite$
+ 1.class
+SHA1-Digest: LDNaY3cAKv6OhuWAxiteO6T2LDI=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/DialogField$1.cla
+ ss
+SHA1-Digest: oPzxcWbFAO054ZmsFrKseMes3jk=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/IResumeAtLineTarget.cl
+ ass
+SHA1-Digest: CShZU7wBusVaOWuUJFInXkUZ+14=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/NaturalVariableFormatA
+ ctionDelegate.class
+SHA1-Digest: nLBgByg16MXILZtvtqPZNwBZOG8=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/PinCloneUtils.class
+SHA1-Digest: ouUHUZoiiO6tN3eP9q3Yq35Q3gM=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iewerComparator.class
+SHA1-Digest: VGVAw4oT6nQFVijBRDrQN6HssZM=
+
+Name: icons/obj16/filenotfound_obj.gif
+SHA1-Digest: OUDeKrGafzJmrGkXEWv46mLfllo=
+
+Name: icons/ovr16/address_ovr.gif
+SHA1-Digest: /Ak3lF+2KGLS8zYWYwK8IpcYhXY=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$4
+ .class
+SHA1-Digest: q4VjyNhFahIc3h8niWobu2+aOuE=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesL
+ abelProvider.class
+SHA1-Digest: X23/we/SSecZxC37erlj/SwHadY=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/PreferenceMessages
+ .properties
+SHA1-Digest: cDq4XuKpzcJFfCZqV4cxRGQ4blw=
+
+Name: icons/dlcl16/auto_refresh_co.gif
+SHA1-Digest: kJsx0u/Kflb48Swicdu4tgWMTF4=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyEditorInput$1.class
+SHA1-Digest: 4GFqz9CpdcNyJCUzw+X1DVJdpLY=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceDisplayAdap
+ ter.class
+SHA1-Digest: 1+lp+5rvnoTlITIkxCauXQuVwWU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$2.class
+SHA1-Digest: VHIX6on7Z9i+pS6jLeohPgFqhxU=
+
+Name: icons/obj16/addrbrkp_obj.gif
+SHA1-Digest: U1I9pmwEO7vYqSYXNA1zTJLM6w0=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/PropertyPageMess
+ ages.properties
+SHA1-Digest: lkOhcCdM4ahE2wZeB6BjGtwZSIk=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/SignalActionDelegate$1
+ .class
+SHA1-Digest: Bq8yVbg/Om9xDnXEFvuE7eqqapw=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CMemoryAdapt
+ erFactory.class
+SHA1-Digest: xshiJRYkVKxziOQF183f8wMwM6I=
+
+Name: org/eclipse/cdt/debug/ui/IPinProvider$IPinElementColorDescriptor
+ .class
+SHA1-Digest: /Ps9IXCa0yT94g27N98G5el20PU=
+
+Name: icons/dlcl16/enabled_co.gif
+SHA1-Digest: sQuIsFpYO52TgSuYUFXO5SrdKjA=
+
+Name: icons/obj16/funbrkpd_obj.gif
+SHA1-Digest: vuKiXKSKtP3spMF0GTmY0Cyz6CA=
+
+Name: icons/obj16/reverse_stepinto.gif
+SHA1-Digest: zha2MbwWBXgvpDMpVs4u99J7MC8=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyRe
+ trieval.class
+SHA1-Digest: 4BnPqxJMkwbWehgFgnFFjOL3YDA=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CSourceNotFoundEd
+ itor$2.class
+SHA1-Digest: wAj5ipGNCQ274KcmxZEOLIUSwtk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/Messages.class
+SHA1-Digest: KZB3mXXJsWLYv+MbFgnBTMGxW8U=
+
+Name: icons/ovr16/argument_ovr.gif
+SHA1-Digest: XzJBlrpHdH0mT9huYHgXindjvs8=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/LoadModuleSymbolsActio
+ nDelegate$1.class
+SHA1-Digest: SiSCPo7u69QkKPGFiWfWjnyJA4k=
+
+Name: org/eclipse/cdt/debug/internal/ui/QuestionStatusHandler$1.class
+SHA1-Digest: AzO2POVD8ChDDIF6GBZxG/V4ztE=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ModulePropertyPa
+ ge$1.class
+SHA1-Digest: PHaUtW1BvrewwPowg1yxb5S+m0s=
+
+Name: icons/elcl16/tnames_co.gif
+SHA1-Digest: nk5RFz0RV3h2D1TJIi7CBrsxBK8=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentElementContentUpda
+ te.class
+SHA1-Digest: blVumIjJpRfHHpi7DD7JIV3bqJ4=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/DebugEventFilterServi
+ ce$DebugEventFilter.class
+SHA1-Digest: ppZpZv4MRFXnNUXIM6clPJMJ21U=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ .class
+SHA1-Digest: TmQaXVo92QsI3wt94w1Uw3lZWsk=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/MoveToLineAdapter.clas
+ s
+SHA1-Digest: w2nIxVq05/C2USAbzIWzNQNG9+A=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentProvider$5.class
+SHA1-Digest: bP/E71K9hw0X4TFYC3KCzQLuXKM=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $4.class
+SHA1-Digest: Oxj8j5RF+ehhb0v/lePAZ7pkfMU=
+
+Name: .api_description
+SHA1-Digest: WOvS+mizevEvk69toFjk5XKa1LM=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/DebuggerTypesPage$
+ DebuggerTypeLabelProvider.class
+SHA1-Digest: 1kxdUtVeo9XcuQcWD00uIVFk6D0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ConfigureColumnsAction
+ $ColumnContentProvider.class
+SHA1-Digest: P7/aESPDl2BSUIDhwmXkgF/i94E=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/DebugContextPinProvid
+ er$1.class
+SHA1-Digest: j+/O2jElGdBMPBBV8rnDoaWFAnA=
+
+Name: icons/ovr16/casttype_ovr.gif
+SHA1-Digest: 2kcvj4K/onHTxYO1/js/7b6siDg=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RestoreDefaultRegister
+ GroupsActionDelegate.class
+SHA1-Digest: STEKbFpYFuPZwiK4npFK3jYS57g=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RegisterGroupDialog$1.
+ class
+SHA1-Digest: +Bqeo/ud70BqWfCq8mgP7MAP3Mc=
+
+Name: org/eclipse/cdt/debug/internal/ui/CWatchExpressionDelegate$2.cla
+ ss
+SHA1-Digest: ig+Dx+nTVSoAcoYHguC+BMzrGoo=
+
+Name: icons/elcl16/load_all_symbols_co.gif
+SHA1-Digest: E2ErRuElVldp3th3M38uKzWHd9Y=
+
+Name: icons/dlcl16/memory_update.gif
+SHA1-Digest: Szp3obN0MOgl6B0gzb1zQSSuk2s=
+
+Name: org/eclipse/cdt/debug/ui/ICDebugUIConstants.class
+SHA1-Digest: nPGD+dJ24Lfb2yTaJu9PITbiNbU=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointDialog$3.
+ class
+SHA1-Digest: akvo3MIZCRiRZHI1e6S7CXdB3zw=
+
+Name: org/eclipse/cdt/debug/internal/ui/editors/DebugTextHoverAdapterF
+ actory.class
+SHA1-Digest: PKnxyTsclw7ghlniSie74Cnf22A=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsList$1.class
+SHA1-Digest: alIOCAvwLoCRc+69UzRFvSYny0Y=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite$LaunchConfigurationSelectionDialog.class
+SHA1-Digest: Q+oYJZJvMfWid6T6cH6saPCRB8U=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddGlobalsActionDelega
+ te$1.class
+SHA1-Digest: tH0NmCwpn05Yd0MMGDqlEvlq1RA=
+
+Name: icons/obj16/exec_obj.gif
+SHA1-Digest: zPa8fpCxOyOJITXqjlCDt08bEcw=
+
+Name: icons/dlcl16/refresh.gif
+SHA1-Digest: Utf/sIa3nWgl458R9yCSi1UtaqE=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/DebugEventFilterServi
+ ce.class
+SHA1-Digest: teKK4BEqkYeutAXTkwayvYV6nQI=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugUIMessages.class
+SHA1-Digest: 9KWr+AoVXFazusL10BjGPQiwIBY=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$TUData.class
+SHA1-Digest: ZVZJcBfZRx6+wK0hm6/bUZYXN0c=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/EnableVariablesActionD
+ elegate.class
+SHA1-Digest: SBlveoqS/z4WLuU3mO5u817SfdA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate$GetSizeRequest.class
+SHA1-Digest: PCaH5Ifjxh2pCUNzKfOmEkzK0ic=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$1.class
+SHA1-Digest: gjfvEO/pVVh2EeYOGYmgDxWBLy8=
+
+Name: icons/obj16/register_obj.gif
+SHA1-Digest: lqBPfFaK7wVLL8OfzkyK1ASajtk=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$5.class
+SHA1-Digest: 46sXNh6wnQqfhtni+SwFxbf3hho=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/FlexibleSignalsV
+ iew$2.class
+SHA1-Digest: aKWA29V5L5xHY64ODb2VOP+kEbo=
+
+Name: icons/elcl16/collapseall.gif
+SHA1-Digest: X2SYkCGSP2jr+iOlYBLU19jEd4Y=
+
+Name: icons/dlcl16/change_reg_value_co.gif
+SHA1-Digest: HdtkuuacUU+XkM5b6p7kLfFTpdE=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModulesMessages.
+ properties
+SHA1-Digest: 9bggJAE9cUIFQebpaCULYqHEd7Q=
+
+Name: org/eclipse/cdt/debug/ui/AbstractCDebuggerPage.class
+SHA1-Digest: iMdArDfYhcIzto4areGxZxwfgqk=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/CDebugPreferencePa
+ ge.class
+SHA1-Digest: x9pirL7Lzj9ePuD4ld+Gvv7fDJI=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyAnnotationModel$4.class
+SHA1-Digest: emyu/Joje2H3xGvJ48jsScLPQ44=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/Separator.class
+SHA1-Digest: 0wmROQHIR0jjXdt/x7qkoqDC9xM=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/MoveToLineActionDelega
+ te$1.class
+SHA1-Digest: RhVTY76QZoLpxebkGgYfCT0nkGg=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentBas
+ eChangeUpdate.class
+SHA1-Digest: Cw8pGxew+/y0kcBNfgjrwOi//8U=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesV
+ iewer.class
+SHA1-Digest: BsM5gFOGYXxxaNDqrRyreWPySWI=
+
+Name: org/eclipse/cdt/debug/internal/ui/DetailsViewerConfiguration.cla
+ ss
+SHA1-Digest: ppawB2WLCw+kNDK6dZr9ITcE2Fw=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugUIUtils.class
+SHA1-Digest: fVECN4Io4LU/JVE5kxoQ8cdcJt8=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/Messages.class
+SHA1-Digest: tueuan9TODSE5XKpOJdhnZ2JroU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentProvider.class
+SHA1-Digest: LI0+e/PM7/fYAdHNPYvsiI9zz0Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/ElementAdapt
+ erMessages.class
+SHA1-Digest: hOdDxHH28ORR4UC87OTC7CFX338=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite$LaunchConfigurationSelectionDialog$1.class
+SHA1-Digest: ph2ScB5KewolCM4Rsy0EhoWI7dA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToArrayActionHandl
+ er$CastToArrayDialog$2.class
+SHA1-Digest: Z3ldJshVoV52kOyBcAanPFCSJ4M=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$6.class
+SHA1-Digest: 6Kg3HSXRRoOZUBstPN9Ls5xVDBc=
+
+Name: org/eclipse/cdt/debug/ui/ICDebuggerPageExtension$IContentChangeL
+ istener.class
+SHA1-Digest: 4uxJQeggKNNcWjN5XK6hs3J7oN0=
+
+Name: icons/view16/signals_view.gif
+SHA1-Digest: xzavafHRzT2j8pO3W1HqWg2A1E0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/MoveToLineAdapter$1.cl
+ ass
+SHA1-Digest: XNiXE7zekdfk6fw9POepxsZZ9Uc=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$2.class
+SHA1-Digest: VosrdC89fQ1HuC0EFLU8FxuUG10=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/LoadModuleSymbolsActio
+ nDelegate.class
+SHA1-Digest: b50FKEpgW0+YLTRN/di0tfq3Y7U=
+
+Name: org/eclipse/cdt/debug/internal/ui/QuestionStatusHandler.class
+SHA1-Digest: 64tHwod/fEe4yJZc+0Rles8I2nk=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/editor/Disassembly
+ EditorManager.class
+SHA1-Digest: lRTdi51T1L42Q+bUy2rknCe6iZU=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyE
+ lementProxy.class
+SHA1-Digest: WsZJkdGfep7JwRzVGntCIVChFeo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargetMoveToLineActi
+ on.class
+SHA1-Digest: qYNhkVB2HmwvcN4kkFfd/pgMg4o=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/CDIDisassembly
+ Retrieval.class
+SHA1-Digest: VqIrMGY9o4dWGQP2qopviAztga4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RunToLineAdapter$1.cla
+ ss
+SHA1-Digest: aNWB6qeY2p741WoXURjPhUyEyds=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ Factory.class
+SHA1-Digest: Jl7+H8UKDCb29Ccii26JjSHI9tM=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyMessages.properties
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$7$1.class
+SHA1-Digest: sNahx8g04Jq2mzfzUf0mgkxebks=
+
+Name: icons/obj16/var_global.gif
+SHA1-Digest: ZzmoNHQxid5/lU9zrxOaESomHsE=
+
+Name: icons/dlcl16/load_symbols_co.gif
+SHA1-Digest: nc8TGQxVVvLiljhg0NRDF1+TfHM=
+
+Name: icons/obj16/proj_anchor_obj.gif
+SHA1-Digest: 1kdGhmn3BZwDdTxQZn4NS4mWoMc=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/VariableFormatActionDe
+ legate.class
+SHA1-Digest: qHnpoczNMRRzCBBvSxMOswrkHts=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/CDebugPreferencePa
+ ge$PropertyChangeListener.class
+SHA1-Digest: B2PHuV7boHmcRQoUTD+o1bYGTXY=
+
+Name: icons/obj16/var_global_aggr.gif
+SHA1-Digest: xBgge7GGkqLoJ2lagJtiT0YQxOo=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $2.class
+SHA1-Digest: FlNBiCkEYlJ/hiQlJ9VOxNv89yk=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$A
+ ddressAndSpaceHolder.class
+SHA1-Digest: ZVRtSgF3yUBMv8SXONhR1i0NUSk=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ResumeWithoutSignalCo
+ mmand.class
+SHA1-Digest: 6t2gqcWt2kC44XflGEHpJKNfig0=
+
+Name: icons/obj16/write_obj.gif
+SHA1-Digest: ZQJB870054uCViMT8JiYvOA8Rmk=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/CApplicationLaunchShort
+ cut$1.class
+SHA1-Digest: tRTOq5ofJrBLQtbZWn859ngK/Xk=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugImageDescriptorRegistry$
+ 1$1.class
+SHA1-Digest: e88g0mhvoHrsTCUZmtw0Ndl4tg4=
+
+Name: icons/wizban/mapentry_wiz.gif
+SHA1-Digest: 8Xe4qKwr+z1TpwboI/HvZrJljtM=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargetResumeAtLineAc
+ tion$DebugContextListener.class
+SHA1-Digest: kWhIhmvw0yykPxlddqVHX2e3i6I=
+
+Name: icons/dlcl16/runtoline_co.gif
+SHA1-Digest: aZCKKTY105fc2a0tJ/OsfzS6Swc=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentAnn
+ otationUpdate.class
+SHA1-Digest: qnfJRuv/LjcaASFnO+imWCEwtaQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iewCopyHandler.class
+SHA1-Digest: 5EqiZZ2NDH3f4Vcw3PdZb6qPEV0=
+
+Name: org/eclipse/cdt/debug/ui/sourcelookup/DefaultSourceLocator.class
+SHA1-Digest: AzYZGEAHnRLBssHByFifp3n8L/c=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ActionMessages.propert
+ ies
+SHA1-Digest: rYB8TfUXd81oVcbHuRPgYATA9T8=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CWatchExpres
+ sionFactoryAdapter.class
+SHA1-Digest: dB1ineKLPE6NmltW3Yym3JfR0nQ=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundAction.class
+SHA1-Digest: 8zabJi7jWaGYKVaCfheFDRAfUAo=
+
+Name: icons/obj16/registergroupd_obj.gif
+SHA1-Digest: mNIVFYH1U+8GEQdqYx8hE33PafI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/EnableVariablesActionD
+ elegate$1.class
+SHA1-Digest: ttsAENENkS5xZJ2x4PtWCehK+GM=
+
+Name: org/eclipse/cdt/debug/internal/ui/InfoStatusHandler.class
+SHA1-Digest: 8wEdURNslsHwP435F6EwjKcYr2M=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/VirtualSour
+ ceViewer$1.class
+SHA1-Digest: bObbnMjQ8MRsQ478kvZsqFGc3ag=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsMessages.
+ properties
+SHA1-Digest: SEzIldGNkBHjNgVa87bfxEZP0b0=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DefaultViewC
+ olumnPresentationFactory.class
+SHA1-Digest: 7hGrC3V1YVJOrvlQESTQtik4ncg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$7.class
+SHA1-Digest: GLRmZOfsjaJFQ6vvFVVWkPwm7tA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RegisterGroupDialog.cl
+ ass
+SHA1-Digest: LQAgW7aQKXOTgSvUwTy18mVlzW8=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsView$Sign
+ alsViewLabelProvider.class
+SHA1-Digest: 3dScLD2u8W6GF6XcYBaxC5SUKO4=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$4.class
+SHA1-Digest: H0wCP+5V71MgawWKM8A0xtQCBYY=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$3.class
+SHA1-Digest: piFSHUzFwpFGV5oBUvBlXj0hNqw=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyRenderingTypeDelegate.class
+SHA1-Digest: jHpfznKRosR7D5szLVCfrDBQnao=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyDo
+ cument.class
+SHA1-Digest: j3nPtQJCW/ZJq5mkgzfEGUYIfcE=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$14.class
+SHA1-Digest: wLRpuFkn4e8dYw39baFFsxKeALY=
+
+Name: icons/elcl16/instr_step.gif
+SHA1-Digest: qJG6DQqUQr43Ta5wBwHcPE15EkA=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/ViewIDCounterManager$
+ 1.class
+SHA1-Digest: 0frVdLdjXSW5wOtDmh7xX/h5w5Q=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$6$1.class
+SHA1-Digest: v7Sgaz4F6r9ixKGBS0lt7/Gz3iA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ResumeAtLineAdapter.cl
+ ass
+SHA1-Digest: i42pc/FvdHfw61UZ4ypsnjcDNQg=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ReverseStepIntoComman
+ dHandler.class
+SHA1-Digest: 5jZgj3Gghv+Il3EmOiYW6cfnNlc=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToTypeActionHandle
+ r.class
+SHA1-Digest: 9ob7Eh7Kve+X5e9QemUCvUnPmj4=
+
+Name: icons/obj16/registerd_obj.gif
+SHA1-Digest: pHSJu7zA782orcYe2RUcTwnBfdM=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o.class
+SHA1-Digest: bzfEbZZL6TXtfiUZt7d5IIrl4ag=
+
+Name: org/eclipse/cdt/debug/ui/breakpoints/CEventBreakpointsLabelProvi
+ derFactory$1.class
+SHA1-Digest: cRHEgDHE1yIJxELccsgH1Mwi/2Q=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ResumeAtLineActionDele
+ gate$1.class
+SHA1-Digest: XLWPXXk/tdhoR8hhNr/yxUNEyeQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/EditContainerActi
+ on.class
+SHA1-Digest: SIlUblwHah9/Cz+LXuPx1KTpUa0=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutableWizard
+ .class
+SHA1-Digest: 8L7Q1gIxDjxMIwhngOpbsb33xP8=
+
+Name: icons/view16/disassembly_view.gif
+SHA1-Digest: ib6Gm3+lrR9rm+kQUt0fCgYTU6I=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesV
+ iewer$TranslationUnitInfo.class
+SHA1-Digest: pEmI5DN1sb1hwKwzbTk/1BZ0QAo=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew.class
+SHA1-Digest: Nzg3jddgE7K9Q5STxtNo+kkUAKo=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/GlobalActionsList$2.c
+ lass
+SHA1-Digest: LeeRh3AHg0dYgv9b5waUwE0o9NU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentLab
+ elUpdate.class
+SHA1-Digest: /so42zz8juG0+R2AcuBfrfB/CZw=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointUpdater$2.class
+SHA1-Digest: XbE+4xh6kz9dj3nyk+XbzlwNpdk=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ResumeAtLineActionDele
+ gate$DebugContextListener.class
+SHA1-Digest: 9Gi0YvmfrmBBQx/nNYJ8y9LwN6U=
+
+Name: org/eclipse/cdt/debug/ui/PinElementHandle.class
+SHA1-Digest: 9C+ywVRpiy0SfBZOS1+2lrTO12E=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RestoreDefaultTypeActi
+ onHandler.class
+SHA1-Digest: 20/z8s7TvffCr4vQN0B89Fbyuew=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/BreakpointLocationVeri
+ fier.class
+SHA1-Digest: RoJm6oW+14fhvShPL73Xc8s/LQo=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$9.class
+SHA1-Digest: YSA1Ioi5yA8NGcELfLtVk8h/Dok=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$8.class
+SHA1-Digest: BmnmxLGkETAl8+Niw9Pqco5RnF4=
+
+Name: icons/dlcl16/showasarray_co.gif
+SHA1-Digest: bXZXMd8b2riIYLD9YjNn8Y4b44w=
+
+Name: icons/obj16/stop_tracing_obj.gif
+SHA1-Digest: cN7NbXa5cNkTFYX3Ah9S3DuKaz0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ExpressionDialog$1.cla
+ ss
+SHA1-Digest: MyXPfO6etCFD0KJlGvS+1KqIMyw=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargetResumeAtLineAc
+ tion.class
+SHA1-Digest: PD+P0Ep8dkKGz3wnzEohyUY3WhA=
+
+Name: icons/obj16/common_tab.gif
+SHA1-Digest: uMozJgCLAD3XL4cmpwtst01gdlc=
+
+Name: icons/elcl16/show_parents.gif
+SHA1-Digest: FNzu8tR3gVkwx4K/RPshKnG5mWg=
+
+Name: org/eclipse/cdt/debug/internal/ui/editors/DelegatingDebugTextHov
+ er.class
+SHA1-Digest: 3QLuD2vVB/I0H/+0C8TpEncHdpU=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsViewModel
+ Proxy.class
+SHA1-Digest: SXjUGWMVWmXkozkE/MTlDUe3UoA=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$2
+ .class
+SHA1-Digest: pRvEgQZgNvtDAHXpNBDcCg10dVU=
+
+Name: icons/ovr16/castarray_ovr.gif
+SHA1-Digest: lyuLxig5zHUIA7rIViRp0iMrqzA=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsMessages.
+ class
+SHA1-Digest: Ar4g6vGUz7Cv9haUjIL583leg3M=
+
+Name: icons/view16/memory_view.gif
+SHA1-Digest: C0ZbvS4xSL2fVR6JvWc1yNQMl7Q=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModulesViewEvent
+ Handler.class
+SHA1-Digest: Zm5fZbSoeo2WFU2r3gK1FLCee0I=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyUti
+ ls.class
+SHA1-Digest: 48t5bcEvezA53X6oYkauQpZnEbI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToTypeActionHandle
+ r$1.class
+SHA1-Digest: BOsuwAGOGMwKblA/1ZQZelOfNPM=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ThreadFilterEdit
+ or$ThreadFilterContentProvider.class
+SHA1-Digest: lA9FG0klH/NhXEMZFkEPnCr0ZMo=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentLab
+ elProvider$1.class
+SHA1-Digest: 9Uu5C9TchOn6zcriK2O+jODd8qg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/FlexibleSignalsV
+ iew.class
+SHA1-Digest: wM8tMPuDT6H8bPrJDzlXpOqntzE=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iewer$2.class
+SHA1-Digest: 6yU22AjKU5dO0BiV05QJPihZvi4=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/SourcePreferencePa
+ ge.class
+SHA1-Digest: 4t0POGh3GfNgIxFWDAXH0nhAcX8=
+
+Name: icons/ovr16/actions_ovr_disabled.gif
+SHA1-Digest: 9Coxnmg1GCqdIeQXZA5n1XLgSJA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/IMoveToLineTarget.clas
+ s
+SHA1-Digest: vJyjSZrNv7bu1/IcBpokLthx7gs=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractViewActionDele
+ gate$1.class
+SHA1-Digest: 7NvyqAiBUHtjGbpFlV4uYBIFrLs=
+
+Name: org/eclipse/cdt/debug/internal/ui/CWatchExpressionDelegate.class
+SHA1-Digest: d89OHd68+zw1v5B4YLIHoHawXHc=
+
+Name: icons/obj16/brkp_obj.gif
+SHA1-Digest: u8GTs2/Pd48Auelm5yEtB5V9q9w=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/StringButtonStatu
+ sDialogField.class
+SHA1-Digest: 4NiBmyhZwS1OOzhMWfKoKwEZ5tY=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddGlobalsActionDelega
+ te$SortedListSelectionDialog.class
+SHA1-Digest: ws0tH6ViC0DTjEnbRyyjEha/Idw=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $MapEntryDialog$3.class
+SHA1-Digest: WYhkwcFf6jWFR/MZu6DgzQCaMeA=
+
+Name: icons/obj16/c_app.gif
+SHA1-Digest: anro54soVsKrWT88QDqsey2dnEE=
+
+Name: org/eclipse/cdt/debug/ui/editors/AbstractDebugTextHover$Expressi
+ onChecker.class
+SHA1-Digest: cuYA/XXdb/0Jt8g8KurcwWYTu0w=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$EntryLabelProvider.class
+SHA1-Digest: jtv4gJ9T9AdMgURTrYAMZyiuoLY=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlockDia
+ log$1.class
+SHA1-Digest: qUx+rsCv06pJeC2Np0SFAC034WU=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentLab
+ elProvider.class
+SHA1-Digest: IuYwdyDK/PdGwJ1nsJHOp/gjKeY=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleMementoPro
+ vider.class
+SHA1-Digest: 13ZcCVU7419kImynkCT1KuPIRUE=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/Messages.cla
+ ss
+SHA1-Digest: 8ys8Y47gb7yJirqMK7LupG/CYP0=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyE
+ lementContentProvider$1.class
+SHA1-Digest: U1tDAoSusQv9NrgpBJg0q4T/aWQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RemoveRegisterGroupAct
+ ionDelegate.class
+SHA1-Digest: WUyS39YTfzMcBJEQPlKrIXHF9Lc=
+
+Name: icons/obj16/funbrkp_obj.gif
+SHA1-Digest: pZBA0MrjQUoWQkLY8FpX5YO+njc=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentProvider$3.class
+SHA1-Digest: mLbjwNCoRtIphRtxKd+IkJFAhh8=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $2.class
+SHA1-Digest: wdanyiIdZ9FoLQy8U/6UmJ8fsoA=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$5.class
+SHA1-Digest: tIan5Z7d23FVbcaiwsp2zEwpE2Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$E
+ xpressionsHolder.class
+SHA1-Digest: 4Noqz0WkughIFzoZQm9jEVH4kgQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/UpAction.class
+SHA1-Digest: fRVIPSXgQYhbgXiFvOfL/HWDiK4=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e.class
+SHA1-Digest: wWQP8gtB21WF3kRk99PAVOKozBU=
+
+Name: icons/obj16/registergroup_obj.gif
+SHA1-Digest: YMcDgNwp8I2tu7eqDi7fj3cpqw4=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsPropertyPage$1
+ .class
+SHA1-Digest: WuNWu9t/gVpB0yF2LlAp/j0aIlc=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/DebuggerTypesPage.
+ class
+SHA1-Digest: 1kV7PG9TCh1/0xF+E7bgVq9RH4g=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ConfigureColumnsAction
+ $ColumnLabelProvider.class
+SHA1-Digest: 8LCaTGm9LWJrqL8wdlZTRFkswOg=
+
+Name: icons/dlcl16/tnames_co.gif
+SHA1-Digest: m75CCNfDQ1KC6Ih7ZcjV4vwsZZk=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ResumeActionPage.clas
+ s
+SHA1-Digest: m1gWNheq0JFWBQ7cKeVpbhcJKCc=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentElementContentProv
+ ider.class
+SHA1-Digest: PgzzS7VUD7J2akzwkWiCyvEvqFY=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/editor/Disassembly
+ EditorPresentation.class
+SHA1-Digest: sz52NsO39vByp2a4vtC7G8i+9ys=
+
+Name: org/eclipse/cdt/debug/internal/ui/ICDebugHelpContextIds.class
+SHA1-Digest: OadjTOpXxYuJ2kXoV+s98FJHKDo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointDialog$1.
+ class
+SHA1-Digest: bx1jCc8TCzXu98lMAKUwLzKWRlE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractBreakpointRule
+ rAction.class
+SHA1-Digest: qdjcPZYitNfo5G3W5OO4/myUnzg=
+
+Name: org/eclipse/cdt/debug/ui/editors/AbstractDebugTextHover.class
+SHA1-Digest: UXX4FJ6+ftPJma6bPKYItQNu+3g=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $DetailJob$1.class
+SHA1-Digest: SQi6CwF29D7ASDxv7FmhkCNnvKU=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesV
+ iewer$2.class
+SHA1-Digest: Z5bZdFg1omnMMA961JaODGiY9d0=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdiFactory.class
+SHA1-Digest: hORvHTUHKBOZx3B6jsp/lKnqQ2M=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/TargetProjectSour
+ ceContainerDialog.class
+SHA1-Digest: QwV8CHK6sVWFtPNT5uu3wxJdNVc=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ShowFullPathsAction.cl
+ ass
+SHA1-Digest: NETkP/MDPVvVgWhXvmm/U4/acEA=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$3.class
+SHA1-Digest: SEaa8dUfpI+vrq8vQFvwSR+D0M4=
+
+Name: icons/obj16/addrbrkpd_obj.gif
+SHA1-Digest: B6TTHHYx79/3hopKUpM/dFLQFMs=
+
+Name: icons/dlcl16/show_paths.gif
+SHA1-Digest: 445JPEBKQ3rC+hjILlK3h2Xa8Bg=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyRe
+ trieval$DisassemblyRequest.class
+SHA1-Digest: bPtktjyEkerTzwqGF9w+4sQxOO4=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite$LaunchConfigurationTypeContribution.class
+SHA1-Digest: vrDAx/Ose1rJIuZ4GmCsWUmF3Y4=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyAnnotationModel$2.class
+SHA1-Digest: eOC2YJRXl+kZflzL6VZXHJKG+pQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentAnn
+ otationProvider.class
+SHA1-Digest: hXd9tGJYfiN2qyuhuQ+IqqiF14Q=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CompilationDirect
+ orySourceContainerDialog$2.class
+SHA1-Digest: 4CUx3yUtMEZPN2vd+VMdhNOibwE=
+
+Name: icons/obj16/read_obj_disabled.gif
+SHA1-Digest: w2oS1PPuZoJDKWCnPr7MtWvIGeo=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/CDebugPreferencePa
+ ge$1.class
+SHA1-Digest: XK6J7o5vCKSdtoNObCYJSRJ894s=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/PreferenceInitializer
+ .class
+SHA1-Digest: yxtmM4WXjMJArCeNAONp119hpg8=
+
+Name: org/eclipse/cdt/debug/internal/ui/SingleCharReader.class
+SHA1-Digest: PqCAq18jV2+S+d0N63qlddIEu3c=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsList$4.class
+SHA1-Digest: gBhby1tnk80zPLHmxNuSl5IEG0o=
+
+Name: icons/elcl16/disassembly.gif
+SHA1-Digest: ptq+bGgBfOOp3soPb14cydZouvo=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi.class
+SHA1-Digest: FrKGha3qfgAo9qo8kGfGy6DP/p4=
+
+Name: icons/elcl16/runtoline_co.gif
+SHA1-Digest: X7yB9bYrXPy35bgqOQ+hrNsQZTE=
+
+Name: icons/ovr16/function_ovr.gif
+SHA1-Digest: M8siWKOL+RvFlq4o/9CCYb4SdXQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsViewer.cl
+ ass
+SHA1-Digest: FkZDMy0JGiL1QOtRwyVpCVddqyo=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointContextAdapterFacto
+ ry.class
+SHA1-Digest: OACf6Sd6hYDEws3ch4Ndk3tlglQ=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$4.class
+SHA1-Digest: W17XK89Jj/QdFeP/HdL3pFgyIDk=
+
+Name: icons/obj16/program_rel_path_obj.gif
+SHA1-Digest: AgqFD8TBUjGbVFMpd94b3bJPkvI=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundActionComposite.
+ class
+SHA1-Digest: LDRulf0k4ThcyeuawYIpsEE9f4I=
+
+Name: icons/dtool16/watch_exp.gif
+SHA1-Digest: m93hQfkFhcBpoa87JT1QUWiy9XU=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/AbstractImportExecutab
+ leWizard$1.class
+SHA1-Digest: R+UVf8qqa/S2aO0BI4oYRtWio7U=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointWorkbenchAdapterFac
+ tory.class
+SHA1-Digest: RqHhPs+Wrm3aEUuUL5V8+KTtXi0=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$8.class
+SHA1-Digest: xoQfx719yPJyJ6p34AITfiWhgEQ=
+
+Name: icons/elcl16/open_new.gif
+SHA1-Digest: oPC08qQt59LJWyeGE0eAboeBTn4=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$2$2.class
+SHA1-Digest: Mf3+wU5Upwhl3gyPtfJnplSrOBw=
+
+Name: icons/elcl16/det_pane_under.gif
+SHA1-Digest: MySOSIfdRFm3SMXb/YiL2fyqrJA=
+
+Name: about.html
+SHA1-Digest: qRxCrhx2bqfpek8e2pDytN3lYdo=
+
+Name: org/eclipse/cdt/debug/internal/ui/InfoStatusHandler$1.class
+SHA1-Digest: 0zihI85bHb0x6AJ5SgLTWozVJnE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractListenerAction
+ Delegate$1.class
+SHA1-Digest: KBY2yMikUTqYmYifYmLYEGQGwMs=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ModulePropertyPa
+ ge.class
+SHA1-Digest: uoZaZVbywcPtUdSJA4u34JnQr2M=
+
+Name: org/eclipse/cdt/debug/internal/ui/BreakpointImageProvider.class
+SHA1-Digest: qXuEZ4PvjYg7sjt6nQSYL8hXaX4=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CStackFrameV
+ iewerInputProvider.class
+SHA1-Digest: alsqFtx5XrJNBLnaL5E72Lq4Tbg=
+
+Name: icons/elcl16/signal_co.gif
+SHA1-Digest: Nv4CXGjZIWQ4LFGBb4UFvy6aVyk=
+
+Name: org/eclipse/cdt/debug/ui/sourcelookup/SourceLookupMessages.class
+SHA1-Digest: Igvxz/f7HNh0NnCVeIgxWZY+6I0=
+
+Name: icons/obj16/brkpd_obj.gif
+SHA1-Digest: amRTTDTTXDpUbqx8f3ltsTEPteI=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogs/DialogMessages.propert
+ ies
+SHA1-Digest: fcACy0814zv6+Z8XHARhvDfZALQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/SignalPropertyPa
+ ge$1.class
+SHA1-Digest: bD0iRnVD1PA/WPjIrYjFYTkm/Z4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/MoveToLineActionDelega
+ te$DebugContextListener.class
+SHA1-Digest: ey+5aLnxVziVGMWDBzgw3WGZqgA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointActionDel
+ egate.class
+SHA1-Digest: ceKGUKyqfAi3valDS/cubkhGaSw=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceFoldersRela
+ tivePathSourceContainerBrowser.class
+SHA1-Digest: RIeqBhEH6UK4Qi/5H/hGkYHEITQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToArrayActionHandl
+ er.class
+SHA1-Digest: 5HzknujDKmoEOTBLMlsah5Fzp14=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/IStringButtonAdap
+ ter.class
+SHA1-Digest: +yu42HdnsDJfCHh4M3PlFhC6Z78=
+
+Name: icons/ovr16/installed_ovr.gif
+SHA1-Digest: ditbhNRaVkEtqYwIONJ0u0Rx+Sw=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/LayoutUtil.class
+SHA1-Digest: ycwYIg8MgXwkMzSfmbq7y41oYBo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CastToTypeActionHandle
+ r$CastToTypeInputValidator.class
+SHA1-Digest: a8x788z20edqOjTymsgwBzo0ySg=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/DecVariableFormatActio
+ nDelegate.class
+SHA1-Digest: 9WGitRD2rJyf0qBtfiv2mciIDh8=
+
+Name: icons/ovr16/conditional_ovr.gif
+SHA1-Digest: tCLNvC4Eg/iRNi+gjswmoLLzKSo=
+
+Name: icons/obj16/var_static_aggr.gif
+SHA1-Digest: 1isUeg/3AVhwn6+r/eF9Jt9GPFo=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugUIPreferenceInitializer.
+ class
+SHA1-Digest: GcOdcdWEMcLTTvdTzOxBW1hQGVc=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/messages.properties
+SHA1-Digest: iu2oNTMYopftuq3N1xAVb26okyQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/IDebugExceptionHandler.c
+ lass
+SHA1-Digest: nZ5r5nga11zZ3Unt05pQaKwHGRE=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$5.class
+SHA1-Digest: UNJdm7jWzIuWYuvyx/SyXXu/+ns=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/Disassembly
+ Pane$2.class
+SHA1-Digest: yzKKs1VImLlmzc4RrBSMyrvqeEI=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/BaseViewer$C
+ olumnSelectionAdapter.class
+SHA1-Digest: 5jh2VyHNy4j3+PaWbtgSHD9T5UM=
+
+Name: icons/dlcl16/det_pane_right.gif
+SHA1-Digest: nphJMuoeUnkysgMdFDsld3GmlXc=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$2.class
+SHA1-Digest: JZoP56+FiXUqt0tTvny/gDU2AIo=
+
+Name: icons/elcl16/refresh.gif
+SHA1-Digest: VHUDPMiwiKJcwN0BG7ABhxxFfrA=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$1.class
+SHA1-Digest: aZUKzCpnGjdZL16ud+HMfjosCsc=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointWorkbenchAdapterFac
+ tory$1.class
+SHA1-Digest: NvT1Y83Ro0rH+OgrV5OzcyIyfgw=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite$1.class
+SHA1-Digest: DHQIMHZGuWLMfadcXjOZC1Ajtwg=
+
+Name: icons/dlcl16/move_to_line_co.gif
+SHA1-Digest: NHHy31dY3NrtGOMgE3ztfl8Zi8k=
+
+Name: icons/dlcl16/debugger_console.gif
+SHA1-Digest: ERTyZwsfA4huIsGt3liy3wCpoCo=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyMemoryRendering.class
+SHA1-Digest: zefcVN3r70VKT2JuCxcVdOGitao=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyPa
+ rtCallback.class
+SHA1-Digest: uErgheJ5FZq7Gn3Ew4A8fOSSLag=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CRegisterMan
+ agerProxyMementoProvider.class
+SHA1-Digest: gdBbyDG/MTtVW8HWzHykcwvHjlQ=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$12.class
+SHA1-Digest: Xmj6ZOvRCaGHrsokiw0nojLpaoQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/EvaluationContextManager.class
+SHA1-Digest: mNfTbmwMf23qgX4l/jYLMN9LSHY=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/PinDebugContextActionD
+ elegate$3.class
+SHA1-Digest: Lne98+tv7EbVi46J2yEWRnaowq4=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentAnn
+ otationProvider$1.class
+SHA1-Digest: IOd/hNCngxUaU8fPzQFPLxBFTcM=
+
+Name: icons/dlcl16/disabled_co.gif
+SHA1-Digest: aqw4eXYBdQ/cfxOrXu+R6K57VRA=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $5.class
+SHA1-Digest: wcWIFp+3n7SS1U5aW9I8HMu3aUg=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/CApplicationLaunchShort
+ cut$4.class
+SHA1-Digest: exj/58At4oWbgc6ExUNJzTLKZ4A=
+
+Name: icons/obj16/inst_ptr_top.gif
+SHA1-Digest: p6ExrrQEwpv5Yh05j0+J06IyeoE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/VariableFormatActionDe
+ legate$1.class
+SHA1-Digest: ju6OreBHWE37kbBXUIlVYN85uic=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/PlaceHolderLaunchConfig
+ urationTabGroup.class
+SHA1-Digest: RtiHT678lwAKeUNXyK4tL51EUKw=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentBaseChangeUpdate.c
+ lass
+SHA1-Digest: CrdUdWzcvLTgd7nHjVtNzS2mNfE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargetAction$EmptySe
+ lection.class
+SHA1-Digest: xxszZPjX6yG5ZGtjpSIpNBlSOM0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleBreakpointAdapte
+ r.class
+SHA1-Digest: A3gVsjqhWlaHBE0U1cncnWfHLZU=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$P
+ aramHolder.class
+SHA1-Digest: XL5Z6y2P6ob/rsc94cpODZBPiHg=
+
+Name: icons/dlcl16/jump_co.gif
+SHA1-Digest: qzhnxTmxbRaFG8D1dCObnntS+Ck=
+
+Name: icons/elcl16/watch_globals.gif
+SHA1-Digest: mzp684CQ1vAmHuN/FnCToQ6C2L4=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModuleDetailPane
+ $FindReplaceTargetWrapper.class
+SHA1-Digest: qaQJf9DCdZq4+lUAUcou7Zm/uD0=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/LogActionComposite$1.
+ class
+SHA1-Digest: VQ452agD5PGtNg2HIUxn+11+AVQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/Messages.properti
+ es
+SHA1-Digest: MNIygEce+etkzB/n3q6azkj3thQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RetargettableActionAda
+ pterFactory.class
+SHA1-Digest: 30mbD7wjgh0Ic5GbjkWsWWQQ3o4=
+
+Name: icons/obj16/vard_aggr.gif
+SHA1-Digest: RuHSkkpGEOQ+SMnjgC38KMqUqeg=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$G
+ etMemorySpacesRequest.class
+SHA1-Digest: o9BRFWYUmtbi6lFV7YBQ7e4JxQs=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CDefaultView
+ erInputProvider.class
+SHA1-Digest: 2TFPCerIIuWjZmP1mEawkTLsMZg=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/AbsolutePathSourc
+ eContainerBrowser.class
+SHA1-Digest: 3f/fewcZsiUY1ne21TeR4bjkwAY=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$7.class
+SHA1-Digest: 7mfpRrQvVa7BKfQRGtroJaJTwIE=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/CheckedListDialog
+ Field.class
+SHA1-Digest: uC8x3C9YA2JSoOLcn70l67kJQPI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleShowColumnsActio
+ n$1.class
+SHA1-Digest: VPrNLoQYJDEJOdntHfMLv2+maLk=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$6.class
+SHA1-Digest: DrkedSaAaYCnBnmCdm+3CDQ3ifA=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogs/AddEventBreakpointDial
+ og.class
+SHA1-Digest: qJXItFFUSoVkHNK4ANgN+ypxADE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate$1$1.class
+SHA1-Digest: l3FRyZyZH1kESoKEaV+XCqozCsw=
+
+Name: org/eclipse/cdt/debug/ui/breakpoints/ICBreakpointsUIContribution
+ .class
+SHA1-Digest: zQq99RK5dEIuw5uRyDOD2/pR30U=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/ViewIDCounterManager$
+ 4.class
+SHA1-Digest: bGQdl8VRkhF5Z50V3ZcAFplBejA=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/modules/ModulesViewModel
+ Proxy.class
+SHA1-Digest: GzjAIUpEEMqvmKyn3Xjpz67sVJg=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ViewFilterAction.class
+SHA1-Digest: 5MZRnU0m6z/EefIFgzumceO8Q10=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ModulesPropertiesActio
+ nDelegate$1.class
+SHA1-Digest: SrGIGAlV0Ir5GYq2V91/QsXovXI=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/FlexibleSignalsV
+ iewEventHandler.class
+SHA1-Digest: lQM1K8uYELk/Y2suzSJvRpnThZ8=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$ConfigureColumnsAction.class
+SHA1-Digest: 8Yoh/V8c7S9eS4z3geriZGSKYIs=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyBa
+ ckend.class
+SHA1-Digest: UOewjSKWSBv24nirhLIQfhRoxis=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/signals/SignalsViewColum
+ nPresentation.class
+SHA1-Digest: Y1GcFzjymTnNENHRHv8W9gjpnds=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/LogAction.class
+SHA1-Digest: DxJMN5LhocoZZmVZHqU6Ri/KoEk=
+
+Name: org/eclipse/cdt/debug/internal/ui/OverlayImageDescriptor.class
+SHA1-Digest: tKiuVuEKhZbKulKPv3UC8mrX2M8=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ConfigureColumnsAction
+ .class
+SHA1-Digest: ZyApMjQxvBd9pX1Dj+bxhZh2XIg=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CSourceNotFoundEd
+ itor.class
+SHA1-Digest: o1dvalnv3MsSg9rhbRrB8j142YA=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ListDialogField.c
+ lass
+SHA1-Digest: /7q2ck5arRBj+hCjGgVXw44bymc=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleShowColumnsActio
+ n.class
+SHA1-Digest: V7UBLA2kr8E69Xfwk44wKnKZ+JA=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugImages.class
+SHA1-Digest: TYuJRnkW0VY92gE7/XUNtbN9kjA=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceDisplayAdap
+ ter$DelegatingStackFrame.class
+SHA1-Digest: BbE6R04hMgIiVEv8ZqgtNCoK7TU=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointOnVariabl
+ eActionDelegate$2.class
+SHA1-Digest: bNQYcQK0XVruGOhjfhsI0fS7/kc=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$6$1.class
+SHA1-Digest: uJunsU1gDBggJwZE4ZUB4pSC/q0=
+
+Name: org/eclipse/cdt/debug/internal/ui/DebugMarkerAnnotationModel.cla
+ ss
+SHA1-Digest: VnbwQ9Wda9PnrM2BWCNRUKOLmUg=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/SoundActionComposite$
+ 2.class
+SHA1-Digest: KP7cEPlkIYfNzFlKlGUjra5h/ME=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $MapEntryDialog$1.class
+SHA1-Digest: D5siZ6g8uDuNH8oBnsUXgF7W1SA=
+
+Name: icons/elcl16/auto_refresh_co.gif
+SHA1-Digest: 0avkLQ8KBak8n4wQorEc+cyK/hM=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CBreakpointPropertiesH
+ andler.class
+SHA1-Digest: eemsbGgpOaeRaVxbpBFrDOYcTRg=
+
+Name: org/eclipse/cdt/debug/ui/breakpoints/CEventBreakpointsLabelProvi
+ derFactory.class
+SHA1-Digest: 8tNP6Ikwzj+eJ8a+VDjAhskABkI=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/IDialogFieldListe
+ ner.class
+SHA1-Digest: 1wL/QEZSJ6YohutOLyZL0Ao0M0E=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/RemoveAction.clas
+ s
+SHA1-Digest: DEeJ9BAssY4O9sGZVa/+JqjnxYw=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$5
+ .class
+SHA1-Digest: JY0eWiTfg9COLTE/kHEXfzBYomo=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/StringButtonDialo
+ gField$1.class
+SHA1-Digest: PLhuOirFtgUpjjKRKu6TRWmD8Io=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentCon
+ tentProvider$1.class
+SHA1-Digest: /Nxd7lKPAItx402abGmeMVZETnw=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ReverseToggleCommandH
+ andler$1.class
+SHA1-Digest: 37UfXEFjKSaXNlz4y93+C6/G++0=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$3.class
+SHA1-Digest: vT0r/MtwHkaz149DS3AFgjFxCc8=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrope
+ rtyPage$1.class
+SHA1-Digest: IkNKXfqoslhdzpUu0bQnHK4aVmo=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/DebugContextPinProvid
+ er.class
+SHA1-Digest: zAmodKcZVUCSDRUn065O+EYKfbo=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ReverseResumeCommandH
+ andler.class
+SHA1-Digest: P/fSDCVwFmUxr7idQ1iaBkA+Ipk=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/Disassembly
+ DocumentProvider$DocumentInfo.class
+SHA1-Digest: sm6JWuGTOySiP7vCBywl6xwHmcE=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceDisplayAdap
+ ter$1.class
+SHA1-Digest: vYSp9rp6Ee4HJMxnUHwKNhYAprM=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/PreferenceConstants.c
+ lass
+SHA1-Digest: ti6eGih0HC8wOpLCRwmNnuXREx4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/HexVariableFormatActio
+ nDelegate.class
+SHA1-Digest: oy0chp1L46mDSQ5bbK0q73gByq4=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CSourceNotFoundEd
+ itor$3.class
+SHA1-Digest: Qtl6N/y/pGsnpvo/epxaAzygBIU=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/ViewIDCounterManager.
+ class
+SHA1-Digest: IMX7lF4hfpAesBYi65fLkoOzaN4=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ListDialogField$1
+ .class
+SHA1-Digest: tcXkVGzW8Gfb9Z0BH4FSIyM17Uk=
+
+Name: icons/elcl16/debugger_console.gif
+SHA1-Digest: MYdZE0KCLxGrtqFsEcRi2TtRrRI=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/CDIDisassembly
+ Retrieval$1.class
+SHA1-Digest: rHWd8cc0GcnB8KUxGMcwsgfS3Oc=
+
+Name: org/eclipse/cdt/debug/internal/ui/ErrorStatusHandler$1.class
+SHA1-Digest: O+zFIa1jeFnyooh+lHVYHYKsT4s=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/ComboFieldEditor$1
+ .class
+SHA1-Digest: 9xId+kHoOjU7LEFi2TTkxXX54eY=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ModulePropertyPa
+ ge$2.class
+SHA1-Digest: ZNQBkc+P3fa7wfWRPNks16Kv3ls=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrope
+ rtyPage$LabelFieldEditor.class
+SHA1-Digest: huHObY9z/8TrtZTfidTrlXEMhXU=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointPrope
+ rtyPage$BreakpointIntegerFieldEditor.class
+SHA1-Digest: NGo7ImkAFltH48ar10M2BbluLgE=
+
+Name: org/eclipse/cdt/debug/internal/ui/HTMLPrinter.class
+SHA1-Digest: oCYQ6mUg+S+oj457C4SU6xvueA0=
+
+Name: icons/ovr16/address_ovr_disabled.gif
+SHA1-Digest: 6dj0K1HUt27WmkqujMEeVr15wbs=
+
+Name: icons/obj16/mapentry_obj.gif
+SHA1-Digest: AgqFD8TBUjGbVFMpd94b3bJPkvI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/EditRegisterGroupActio
+ nDelegate.class
+SHA1-Digest: QaWWjdWCQaIti8Ad/viq/dRcy4U=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CStackFrameM
+ ementoProvider.class
+SHA1-Digest: h4wpGY/MS/YRYDlkuGvQshBLhn8=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/GroupDebugContextsCom
+ mandHandler.class
+SHA1-Digest: jbtjM3Z/8UiRhjE7mDogyMRLlnM=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/AbstractDebugEventHandle
+ r.class
+SHA1-Digest: 6JWxoqbkyThR25uOJZZfqk0s1sg=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/OpenNewViewActionDeleg
+ ate.class
+SHA1-Digest: EIjyBNNBrxcR1vBuQOzZUjU67Qw=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$1.class
+SHA1-Digest: WmIYgusk9qUk9e9MfVvGq723h2o=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsPreferencePage
+ .class
+SHA1-Digest: mX02/ua2R4GZUhqDJk1XlWlWpmc=
+
+Name: icons/view16/modules_view.gif
+SHA1-Digest: nkL22+4kbPDTI1ASDZhct7YaLXQ=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/IDisassemblyRe
+ trieval$AddressRequest.class
+SHA1-Digest: zWSuENxbnepT5i5bYckXnsp08lk=
+
+Name: icons/ovr16/warning_ovr.gif
+SHA1-Digest: 76fAklsFV/Jw7hyoXj0qFN8pgPQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/SignalPropertyPa
+ ge.class
+SHA1-Digest: +SXKn3K6ckjfCLLuP2PZ1JcgQz0=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/AddSourceContaine
+ rDialog$1.class
+SHA1-Digest: +D2x7HE3hVMl88rC3kD+obwF0SI=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/DebugContextPinProvid
+ er$2.class
+SHA1-Digest: p1e50rsm8iWOJa5+8abHqfiBNos=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsList.class
+SHA1-Digest: hG/oC9PuxGjOt2ZGWC+z/xvB6jY=
+
+Name: icons/obj16/inst_ptr.gif
+SHA1-Digest: TbBJbMzZZCmBqXMbbGNg03mFG4Q=
+
+Name: icons/obj16/uncall.gif
+SHA1-Digest: yTp/THZsk9JvIicIqefJwMK4LQ4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RegisterGroupDialog$2.
+ class
+SHA1-Digest: QchbA21BYTI+qN/jjWFu6qsckPA=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CVariableLab
+ elProvider.class
+SHA1-Digest: 7E3e/mEu/NNvOHqVF1Wzn7pJuWk=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$EntryCellModifier.class
+SHA1-Digest: UCjfVKmlHs5pDBN4hbTJZLAUAxY=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CollapseAllModulesActi
+ on.class
+SHA1-Digest: k9/m3zMTLfN15RP6mUMPqvqLjlw=
+
+Name: icons/dlcl16/instr_step.gif
+SHA1-Digest: VIpc9C+2LDjsXXI9+DSa8d2icyQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ResumeAtLineActionDele
+ gate.class
+SHA1-Digest: c5WNjVRqDUBRmAkWuccog+zoAeI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CBreakpointPropertiesH
+ andler$1.class
+SHA1-Digest: WV4xuC+TPBorumoSydnZ6VZJxqQ=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ActionsList$2.class
+SHA1-Digest: URtX7AdbgR1EBaZGNEy65ykho6s=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/editor/Disassembly
+ EditorInput.class
+SHA1-Digest: KlOhGazLmvTLyHFfIzPLS752yyI=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/SaveTraceDataCommandH
+ andler.class
+SHA1-Digest: xrGtVNJrlIuIOXucUI5hW9TV9cY=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddGlobalsActionDelega
+ te$2.class
+SHA1-Digest: w7mjcGoakrdmTTUQdzgC3K3kn4o=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractToggleBreakpoi
+ ntAdapter.class
+SHA1-Digest: g4AFhU65PG0gYKXB/N1WwuXm/q4=
+
+Name: plugin.properties
+SHA1-Digest: MRWCCfy39MkRKE6LRb47jBgu2UI=
+
+Name: icons/obj16/ext_file_obj.gif
+SHA1-Digest: jfFuex3bB9TnzELfH22cRXD4nIk=
+
+Name: icons/obj16/var_simple_aggr.gif
+SHA1-Digest: DraZMOBJTDUBhP6lC+35/ZHMSzg=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$2.class
+SHA1-Digest: MSDhPBKVU2ZnqTdEWwzVInQZKg0=
+
+Name: org/eclipse/cdt/debug/internal/ui/CRegisterManagerProxies.class
+SHA1-Digest: xqyIl7qu/4yUcCVyOlv9WwsetYc=
+
+Name: plugin.xml
+SHA1-Digest: p2qdELLZYruII5sVTvELJi2dm0w=
+
+Name: icons/obj16/library_obj.gif
+SHA1-Digest: 5fS5tr+06rdnnXflqNQ2jtjPx/g=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/VirtualDocu
+ ment.class
+SHA1-Digest: Qz5DtYurrxw8lrKMliJSdJ/4Qk4=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/PinCloneUtils$Default
+ PinElementColorDescriptor.class
+SHA1-Digest: tCal4ePWWmJ/iK2vIc9v14nEIHk=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerDialog$6.class
+SHA1-Digest: Yg3onw310qpWKA+l90iOMiC4QRo=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/CBreakpointFilte
+ ringPage.class
+SHA1-Digest: /azh4rM9zD/tARdg1+O0PQO54v4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/NumberFormatsContribut
+ ion.class
+SHA1-Digest: /mED6/9kp5N6b1l5FhXtAZY1GOw=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/DownAction.class
+SHA1-Digest: 12pqZLRs2NWbUnUiYWCAheTgMkQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ToggleCBreakpointsTarg
+ etFactory.class
+SHA1-Digest: s8Ik4xKKOWkADyvJJ2HjH3UUSd0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RemoveGlobalsActionDel
+ egate.class
+SHA1-Digest: khUtfLgU2/KDR+ZcHjZxlEDWZ/U=
+
+Name: icons/dlcl16/watch_globals.gif
+SHA1-Digest: Wm1LAPDyqPp89cZZxYXk4hZ2U3o=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/VirtualDocu
+ ment$LinePosition.class
+SHA1-Digest: eSmsTAL5JyrSaNfL4//Kjkioky4=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/MappingSourceCont
+ ainerBrowser.class
+SHA1-Digest: nL9UIoZ2Q/jJa1gU9s2nJNz3OxI=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/editor/Disassembly
+ EditorManager$1.class
+SHA1-Digest: Rpwh5VObo3TUw0pg3crFsRBbE0I=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/IBreakpointActionPage
+ .class
+SHA1-Digest: ngDQkOy+KE4pADqglbWyRt/bqmA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RestoreDefaultTypeActi
+ onHandler$1.class
+SHA1-Digest: IM++1yyXzFq40DJQdT9IWi338M0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ModulesPropertiesActio
+ nDelegate.class
+SHA1-Digest: b5zmdkeohdT16nzCN+QtLaVjIZI=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $ContentProvider.class
+SHA1-Digest: j6ltJ6L5ag4tCGV1y2uQHwZ72ms=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/StartTracingCommandHa
+ ndler.class
+SHA1-Digest: uKkonigeAG3AzWEVkEWtxo+0KIU=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractDebugActionDel
+ egate$1.class
+SHA1-Digest: liJScFRlIEH9PAufgaEEKn6gAj4=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/CheckedListDialog
+ Field$1.class
+SHA1-Digest: JXUV17NYaXxrxpf0UsmelJriigY=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/rendering/Disassem
+ blyEditorInput.class
+SHA1-Digest: VnTf2FX3qhvRxU4y0s6Wujrcj8o=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/DisassemblyT
+ oggleBreakpointAdapter.class
+SHA1-Digest: xuLo1ejFZITRdws0zlKuExWzosE=
+
+Name: icons/dlcl16/memory_clear.gif
+SHA1-Digest: 2/1fdhACaSPY7JdCSQo0SJQL3F8=
+
+Name: icons/elcl16/rem_all_co.gif
+SHA1-Digest: /GoPVhCpQ+0VtZ7rmiudbpEXoyg=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/LogActionComposite.cl
+ ass
+SHA1-Digest: MYjksnWnK8YTj3gmy/mgKC4mXxE=
+
+Name: icons/ovr16/actions_ovr.gif
+SHA1-Digest: vJuouRL+hh40xHT4PzDMShe119o=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/ExternalToolActionCom
+ posite$LaunchConfigurationSelectionDialog$2.class
+SHA1-Digest: 6wEa3LuwTBSGNF/73tX+EQ5GJP0=
+
+Name: icons/dlcl16/signal_co.gif
+SHA1-Digest: r9eSBNC2OYnhAaREsOCtRfSSPjo=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/SelectionButtonDi
+ alogField.class
+SHA1-Digest: iXuSh1iq93D/pD5HyU1+ZdDzK2s=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/Disassembly
+ Pane.class
+SHA1-Digest: dBOj0Y1/WbuH0BVNxx2D8DZpb0A=
+
+Name: icons/ovr16/global_ovr.gif
+SHA1-Digest: OQ8OdPIF4pk9AWLJLNqRJNJ3azQ=
+
+Name: icons/elcl16/load_symbols_co.gif
+SHA1-Digest: pm9Atk2rpC5iTEnrstlucZgCkks=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageTw
+ o$7.class
+SHA1-Digest: 65A+LGq6R7mjOdofYLV9GN5dObk=
+
+Name: icons/elcl16/import.gif
+SHA1-Digest: KBgRjdXon6FcAufJ9wYEAVQ3SNw=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/SourceFilesC
+ ontentProvider$3.class
+SHA1-Digest: XaHpmYTZMBYKw1Z1Ke2MzeTWLrQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/commands/Disassemb
+ lyDisplayModeHandler.class
+SHA1-Digest: NB+7g2OtCrViGYDQFp0IX3nuh9w=
+
+Name: org/eclipse/cdt/debug/internal/ui/CDebugImageDescriptorRegistry.
+ class
+SHA1-Digest: FLBpeDddU0jIjtU2Xwoz81jdHx0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddWatchpointDialog.cl
+ ass
+SHA1-Digest: JFWyWB2L7JpaX8sR/znDcK7P9hA=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ExpressionDialog.class
+SHA1-Digest: QfWwCcPNDRk+hvgWSFPY/f9CIP4=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$10.class
+SHA1-Digest: 1OrFZ0L5xuz1WAMFi9QmfTdiY0g=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ComboDialogField$
+ 1.class
+SHA1-Digest: gUwe/3vOHftP509815mv6a/FYIQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerWo
+ rkbenchAdapter.class
+SHA1-Digest: tpFLJOZvwM0QPFheZn0mwxpBlf4=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerVi
+ ewer.class
+SHA1-Digest: DzxEQ736xloDkxai5DdiazzXSIo=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/PinDebugContextActionD
+ elegate$1.class
+SHA1-Digest: lk7Nd7L6PDWU3+zx8rOGQv6Ai5c=
+
+Name: icons/obj16/project_obj.gif
+SHA1-Digest: IbTuxm7/gFt0hGAoWwikjS96Bpk=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/PathMappingDialog
+ $3.class
+SHA1-Digest: qaxgjJwHDjoiJuWs4xx6EiyQyR4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddExpressionEditorAct
+ ionDelegate.class
+SHA1-Digest: j5lP8bu7AVurF62/YTJCAxPkkOQ=
+
+Name: icons/elcl16/change_reg_value_co.gif
+SHA1-Digest: 0cRT+XUCc/oE/4WaLzDGvgD+GiY=
+
+Name: org/eclipse/cdt/debug/internal/ui/launch/CApplicationLaunchShort
+ cut$2.class
+SHA1-Digest: 1ajw047IN5D0cXktqc755sPvQzQ=
+
+Name: icons/obj16/cproject_obj.gif
+SHA1-Digest: sGTChM2jy4Y9mAMkw8tWh9vaPYw=
+
+Name: org/eclipse/cdt/debug/ui/sourcelookup/SourceLookupMessages.prope
+ rties
+SHA1-Digest: NiA2QTx6eJ0/GgBMaQO+jwdbfYc=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/ResumeWithoutSignalCo
+ mmandHandler.class
+SHA1-Digest: XIC0zBDC9gckWNSDbxjX5vQXQXc=
+
+Name: org/eclipse/cdt/debug/internal/ui/preferences/DebuggerTypesPage$
+ DebuggerTypesDialogField$1.class
+SHA1-Digest: X7wxjIb5QigqiEpw/mQZTNQXZD8=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentPresentation.class
+SHA1-Digest: FKZxfFkmlZYzFLNVKwG9SUkEpxI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/BinaryVariableFormatAc
+ tionDelegate.class
+SHA1-Digest: JXeEyq06ynDuUmNpWoBLxXx/xsI=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/VirtualSour
+ ceViewer$2.class
+SHA1-Digest: s9vL8765Z6BOAiR699FT/O/gcCo=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CWatchExpres
+ sionFactoryAdapterFactory.class
+SHA1-Digest: qrkvXg5K6A0KnASsyPBWIQSRWKc=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/Messages.properties
+SHA1-Digest: 7mUiu6TZtMClsjthOu2EqtmPD7Q=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AddRegisterGroupAction
+ Delegate.class
+SHA1-Digest: NArT0Lf9XX/ed8fyeO6nk1YqCUc=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/SelectionButtonDi
+ alogFieldGroup$1.class
+SHA1-Digest: HTB/vMpQUDCzlYrXIIcXZYVv6C0=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/ShowFullPathsAction$1.
+ class
+SHA1-Digest: W4fonGIon49tvRB38Y/vT/PrHzU=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentElementLabelProvid
+ er.class
+SHA1-Digest: C2CaDw3OdwpHxeetiyoI15qd3V0=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesV
+ iew$5.class
+SHA1-Digest: 1dRtoSzQIXnClqViwaG6LO92NSE=
+
+Name: org/eclipse/cdt/debug/internal/ui/propertypages/ModuleProperties
+ $Property.class
+SHA1-Digest: vbEpVUKBzDzastdKGS6zvCKD2vM=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$4.class
+SHA1-Digest: l9QTVe95eE0TxJfNSewRX26n6pY=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$15.class
+SHA1-Digest: WuGgr0oURRrg1FMNHfUZpHS0rSA=
+
+Name: org/eclipse/cdt/debug/internal/ui/CValueDetailProvider$1.class
+SHA1-Digest: y/Qd+/MDU+BtyMYdkbprLP9d3mk=
+
+Name: org/eclipse/cdt/debug/internal/ui/pinclone/ViewIDCounterManager$
+ 2.class
+SHA1-Digest: Pda9/8iIZqkLrrUbNWRS/psZieY=
+
+Name: icons/elcl16/signal0_co.gif
+SHA1-Digest: n+sakKizxR6heV5h+YwJ/olO+0Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/SourceContainerVi
+ ewer$ContentProvider.class
+SHA1-Digest: 7w6/G2h9wXGsPZl9qdZM9AVah2s=
+
+Name: icons/obj16/library_syms_obj.gif
+SHA1-Digest: +GiS57yk4JXJISJNOg9CTGlmqAg=
+
+Name: icons/elcl16/show_ascii.gif
+SHA1-Digest: s+Ni83zOoXOzg6TgWoTInB1FTI0=
+
+Name: icons/obj16/read_obj.gif
+SHA1-Digest: CsdIfyI1tWP6sVGKgOhJWJjHqeo=
+
+Name: icons/dlcl16/columns.gif
+SHA1-Digest: eLr23Arb3qE3ISaXIP4HjIKGMUY=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/GlobalActionsList.cla
+ ss
+SHA1-Digest: xl9X01zzAxqsixXhxlkZQxqQGz0=
+
+Name: icons/obj16/var_pointer.gif
+SHA1-Digest: 0zAmoojjcBCDqy+pX3/b2qNGinE=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/CBreakpointPropertiesR
+ ulerActionDelegate.class
+SHA1-Digest: IdpnsFsES1G2ERsis9uqzscIuOU=
+
+Name: icons/obj16/reverse_stepover.gif
+SHA1-Digest: ZRU+LqPOJ259Qof8UEPY04XCcww=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/AbstractDebugEventHandle
+ rView.class
+SHA1-Digest: tIqtLQRYn3FbiwTLQy0cmlVuUtQ=
+
+Name: org/eclipse/cdt/debug/ui/breakpointactions/GlobalActionsList$3.c
+ lass
+SHA1-Digest: L3cmxSLqJdDoFk5q/ftEZ9ucXuY=
+
+Name: org/eclipse/cdt/debug/internal/ui/CBreakpointUpdater$3.class
+SHA1-Digest: pkMULTVGBM3N/ZPriw112IgLdqY=
+
+Name: org/eclipse/cdt/debug/ui/disassembly/IDocumentElementAnnotationU
+ pdate.class
+SHA1-Digest: yiJF2LOwtIcd7X5lXEpAZaD+L/k=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CRegisterMan
+ agerContentProvider.class
+SHA1-Digest: Aazns+xQUPzHap2rBXckI+0la0w=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/RegistersVie
+ wColumnPresentation.class
+SHA1-Digest: 2y0JQlaz7XYWXNeiw0ll/vErxxM=
+
+Name: icons/elcl16/rem_co.gif
+SHA1-Digest: q6saUMgY5IoKy/nYmCbCl2O5R8M=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CDebugTarget
+ ContentProvider.class
+SHA1-Digest: zC+ha7KBYBL/EaABUsYgva9xdIs=
+
+Name: org/eclipse/cdt/debug/internal/ui/elements/adapters/CThreadConte
+ ntProvider.class
+SHA1-Digest: byaoneW6uLRz7oLcxgdeWmbcxR0=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesC
+ ontentProvider$1.class
+SHA1-Digest: hMlRng42Zwloc8pTWB9BdDsTe0s=
+
+Name: org/eclipse/cdt/debug/ui/importexecutable/ImportExecutablePageOn
+ e$9.class
+SHA1-Digest: yLScZICD/+v5C6vxZw4TSVWy77M=
+
+Name: org/eclipse/cdt/debug/ui/IPinProvider.class
+SHA1-Digest: qPjeVbm7dp9uHj/hkpscaRVEF60=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/BaseViewer.c
+ lass
+SHA1-Digest: byv+B5Nw+lGoFV5O0q2tonk0r0c=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/memory/AddMemoryBlocks$3
+ .class
+SHA1-Digest: Z4fJgUF+zo+U6x1hqcMqJ7HLnfA=
+
+Name: icons/elcl16/refresh_co.gif
+SHA1-Digest: 3NWUc5UjsZeI5q6NCFvfEyeUB1I=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractViewActionDele
+ gate.class
+SHA1-Digest: 6NO7zw6BHiILdH+WMqdEjOhpQ00=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/DocumentLab
+ elProvider$2.class
+SHA1-Digest: WGgIjzODEhBX2Cw4AYAMeZ4ecIE=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/VirtualSour
+ ceViewer.class
+SHA1-Digest: LY7L8X/UgJjdPRCVCNotMtqfxaI=
+
+Name: org/eclipse/cdt/debug/internal/ui/commands/StopTracingCommandHan
+ dler.class
+SHA1-Digest: nJcFiU6HwpNN/Lj/FF1Q8q8SGLQ=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/dsf/DisassemblyBac
+ kendCdi$1.class
+SHA1-Digest: YqqVKa2OLvOfTztdqgVPX6khcYs=
+
+Name: icons/dlcl16/load_all_symbols_co.gif
+SHA1-Digest: +qdqPFtRprq7BcOFH8J8mbdCXWg=
+
+Name: org/eclipse/cdt/debug/internal/ui/disassembly/viewer/Disassembly
+ DocumentProvider.class
+SHA1-Digest: StpFZLVaz7IC/nvVzhaZ9Z5hWmE=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogs/AddEventBreakpointDial
+ og$ContributedFields.class
+SHA1-Digest: 4fnhKq6hUjyjFF+xvqMmONssuyI=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/AbstractViewActionDele
+ gate$2.class
+SHA1-Digest: wPFgJ7GVz6RD115geN6MrswvhLg=
+
+Name: org/eclipse/cdt/debug/ui/ICDebuggerPage.class
+SHA1-Digest: xtwu//xdUez5TpF9sQaw7Vhvyw4=
+
+Name: org/eclipse/cdt/debug/internal/ui/actions/RunToLineAdapter.class
+SHA1-Digest: eUcsf8wUrD/uH12SUTUzrLbN5H4=
+
+Name: org/eclipse/cdt/debug/internal/ui/views/executables/ExecutablesC
+ ontentProvider.class
+SHA1-Digest: /WgHlFT6L7LMb9qDQBn5hLKi5y0=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogfields/ComboDialogField.
+ class
+SHA1-Digest: adXZ5i9zk3Uydm1Ag6RrJzpA7Kc=
+
+Name: org/eclipse/cdt/debug/internal/ui/sourcelookup/CSourceNotFoundEd
+ itor$1.class
+SHA1-Digest: mqZ/F5aU8+iIMzPMDhgnb7YLmxU=
+
+Name: icons/elcl16/resume_at_line_co.gif
+SHA1-Digest: RLUv5J2ituusWyCWvRtZjaI1tJU=
+
+Name: icons/obj16/exec_dbg_obj.gif
+SHA1-Digest: xcI4+D7trOUQ8uabR2pEBGg/FcY=
+
+Name: icons/obj16/mapping_obj.gif
+SHA1-Digest: HosT4ucYl37PcPaZEZ4jiEd6K5Y=
+
+Name: org/eclipse/cdt/debug/internal/ui/dialogs/DialogMessages.class
+SHA1-Digest: ooCss1HNkr623fJ7280wSKzk3Uw=
+

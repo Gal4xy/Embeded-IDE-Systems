@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Plugin.name
+Bundle-SymbolicName: org.eclipse.ui;singleton:=true
+Bundle-Version: 3.7.0.I20110602-0100
+Bundle-ClassPath: org.eclipse.ui_3.7.0.I20110602-0100.jar
+Bundle-Activator: org.eclipse.ui.internal.UIPlugin
+Bundle-Vendor: %Plugin.providerName
+Bundle-Localization: plugin
+Export-Package: org.eclipse.ui.internal;x-internal:=true
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.2.0,4.0.0)",
+  org.eclipse.swt;bundle-version="[3.5.0,4.0.0)";visibility:=reexport,
+  org.eclipse.jface;bundle-version="[3.5.0,4.0.0)";visibility:=reexport,
+  org.eclipse.ui.workbench;bundle-version="[3.5.0,4.0.0)";visibility:=reexport,
+  org.eclipse.core.expressions;bundle-version="[3.4.0,4.0.0)"
+Created-By: 1.7.0_45-b18 (Oracle Corporation)
+Bundle-ActivationPolicy: lazy
+Ant-Version: Apache Ant 1.8.2
+Eclipse-SourceReferences: scm:cvs:pserver:dev.eclipse.org:/cvsroot/eclipse:org.eclipse.ui;tag=I20110602-0100
+Bundle-RequiredExecutionEnvironment: CDC-1.0/Foundation-1.0,
+  J2SE-1.3

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/org.eclipse.cdt.debug.core/org.eclipse.cdt.debug.core_7.1.0.201202111925.jar"/>
+	<classpathentry kind="lib" path="/org.eclipse.cdt.ui/org.eclipse.cdt.ui_5.3.2.201202111925.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Galaxy/Desktop/szide20141201/org.eclipse.cdt.managedbuilder.core/org.eclipse.cdt.managedbuilder.core_8.0.2.201202111925.jar"/>
+	<classpathentry kind="lib" path="/org.eclipse.cdt.launch/org.eclipse.cdt.launch_7.0.0.201202111925.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

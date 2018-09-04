@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.rcp.example.notemplate.app.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.rcp.example.notemplate.app.Perspective"
+            id="com.rcp.example.NoTemplate.app.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.rcp.example.NoTemplate.app.actionSet1"
+            label="Action1">
+         <menu
+               id="com.rcp.example.NoTemplate.app.menu1"
+               label="label"
+               path="additions">
+         </menu>
+         <action
+               class="com.rcp.example.notemplate.app.ActionTest"
+               icon="icons/eclipse16.png"
+               id="com.rcp.example.NoTemplate.app.action1"
+               label="action"
+               style="push"
+               toolbarPath="Normal/additions">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

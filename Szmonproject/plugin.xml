@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+           <launchConfigurationType
+               category="org.eclipse.ui.externaltools"
+	            delegate="c8051.server.ServerLaunchConfigurationDelegate"
+	            id="server.LaunchConfigurationType"
+	            modes="run"
+	            name="c8051-server">
+	       </launchConfigurationType>
+   </extension>
+    <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+           <launchConfigurationType
+	            delegate="c8051.debugger.LaunchDelegate"
+	            id="debugger.LaunchConfigurationType"
+	            modes="debug"
+	            name="c8051-debugger">
+	       </launchConfigurationType>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+           <launchConfigurationTabGroup
+	            class="c8051.server.ServerLaunchConfigurationTabGroup"
+	            description="server"
+	            id="server.LaunchConfigurationTabGroup"
+	            type="server.LaunchConfigurationType"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+           <launchConfigurationTabGroup
+	            class="c8051.debugger.LaunchConfigurationTabGroup"
+	            description="bugger"
+	            id="debugger.LaunchConfigurationTabGroup"
+	            type="debugger.LaunchConfigurationType"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.cdt.debug.core.CDebugger">
+      <debugger
+            platform="*"
+            class="szmonproject.gdb.SparcElfGDBDebugger"
+            cpu="*"
+            modes="debug"
+            id="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger"
+            name="GDB Debugger">
+      </debugger>
+   </extension>
+   <extension
+         point="org.eclipse.cdt.debug.ui.CDebuggerPage">
+      <debuggerPage
+            class="szmonproject.gdb.SparcElfGDBDebuggerPage"
+            id="com.gaisler.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebuggerPage"
+            debuggerID="com.bjsasc.gdbdebugger.eclipse.plugins.cdt.sparcelf.SparcElfGDBDebugger">
+            </debuggerPage>
+   </extension>
+ 
+</plugin>

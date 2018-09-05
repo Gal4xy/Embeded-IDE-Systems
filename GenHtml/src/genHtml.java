@@ -18,7 +18,7 @@ public class genHtml {
 		
 		//TEST SUITE
 		//System.out.println("result "+handleObj.indexOfCov()+" ");
-		handleObj.indexOfCov();
+		//handleObj.indexOfCov();
 	}
 	
 	
